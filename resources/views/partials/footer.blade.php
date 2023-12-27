@@ -24,7 +24,7 @@
 		 <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
 		   <div>
 			 <h2
-			   class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+			   class="mb-6 text-sm font-semibold text-gray-900 uppercase "
 			 >
 			   Contact 
 			 </h2>
@@ -43,7 +43,7 @@
 		   </div>
 		   <div>
 			 <h2
-			   class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+			   class="mb-6 text-sm font-semibold text-gray-900 uppercase "
 			 >
 			   Follow us
 			 </h2>
@@ -66,7 +66,7 @@
 		   </div>
 		   <div>
 			 <h2
-			   class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white"
+			   class="mb-6 text-sm font-semibold text-gray-900 uppercase "
 			 >
 			   Legal
 			 </h2>
@@ -82,7 +82,7 @@
 		 </div>
 	   </div>
 	   <hr
-		 class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8"
+		 class="my-6 border-gray-200 sm:mx-auto lg:my-8"
 	   />
 	   <div class="sm:flex sm:items-center sm:justify-between">
 		 <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
