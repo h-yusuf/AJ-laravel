@@ -4,8 +4,8 @@
 <head>
   <title>Ada Jasa Web</title>
   <link rel="website icon" style="border-radius: 50%" href="icon/icon.png" type="png" type="image/png" />
-  <link rel="stylesheet" href="dist/output.css" />
-  <link rel="stylesheet" href="{{ asset('pages/dist/output.css') }}">
+  <link rel="stylesheet" href="css/output.css" />
+  <!-- <link rel="stylesheet" href="{{ asset('pages/css/output.css') }}"> -->
   <link rel="icon" href="https://www.amikomsolo.ac.id/wp-content/uploads/2020/01/logo-amikom-surakarta-1.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>

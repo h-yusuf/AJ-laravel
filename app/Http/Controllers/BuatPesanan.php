@@ -13,7 +13,7 @@ class BuatPesanan extends Controller
     }
     public function tambahItem(Request $request)
     {
-        $idTransaksi = sprintf("%03d", Keranjang::max('id_transaksi') + 1);
+        $idTransaksi = sprintf("D%03d", Keranjang::max('id_transaksi') + 1);
         $data = [
             'id_transaksi' => $idTransaksi,
             'layanan_utama' => $request->input('layananUtama'),
