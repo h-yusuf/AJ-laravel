@@ -153,25 +153,14 @@
   </div>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-  {{-- <script>
-    Swal.fire({
-  icon: "success",
-  title: "Horeee.",
-  text: "Something went wrong!",
-  footer: '<a href="#">Why do I have this issue?</a>'
-});
-  </script> --}}
-  @if(Session::get('succes'))
+  @if($message = Session::get('succes'))
   <script>
     Swal.fire({
   icon: "success",
   title: "Horeee",
-  text: "Login successfuly",
+  text: "{{ $message }}",
 });
   </script>
-  {{-- <script>
-  Swal.fire('{{ $message1 }}');
-  </script> --}}
   @endif
 
   @endsection

@@ -88,10 +88,13 @@
 				 <img class="w-10 h-10 rounded-full" src="../../asset/PP.png" alt="Jese Leos" />
 			   </a>
 			   <div>
-				 <button type="button"
-				   class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
-				   log out
-				 </button>
+				<form action="{{route('logout')}}">
+
+					<button type="submit"
+					  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+					  log out
+					</button>
+				</form>
 			   </div>
 			 </div>
 			 <p class="text-base font-semibold leading-none text-gray-900">

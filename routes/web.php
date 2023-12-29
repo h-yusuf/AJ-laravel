@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,39 +42,45 @@ Route::get('/chat', function () {
     return view('pages/chat');
 });
 Route::get('/test', function () {
-    return view('pages/example');
+    return view('example/example');
 });
 Route::get('/transaksi', function () {
     return view('pages/transaksi');
 });
 
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\homeController;
 use App\Http\Controllers\BuatPesanan;
 
-Route::post('/prosesLogin', [LoginController::class, 'prosesLogin'])->name('prosesLogin');
-Route::post('/prosesRegister', [LoginController::class, 'prosesRegister'])->name('prosesRegister');
+Route::get('/login', [LoginController::class, 'index'])->name('login_i');
+
+
+Route::post('/login', [LoginController::class, 'login'])->name('login');
+
+Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::post('/register', [LoginController::class, 'register'])->name('register');
+
+Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], function () {
+    
+});
+
+
+Route::get('/home', [homeController::class, 'home'])->name('home');
+// Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin.auth'], 'as' => 'admin.'], function () {
+//     Route::get('/home', [homeController::class, 'home'])->name('home');
+// });
+Route::get('/transaksi', [BuatPesanan::class, 'showItem'])->name('showItem');
+
 
 Route::post('/simpanData', [BuatPesanan::class, 'simpanData'])->name('simpanData');
 
-// Route::post('/simpan-data', [BuatPesanan::class, 'simpanData'])->name('simpan.data');
-
-Route::post('/pages/transaksi', [BuatPesanan::class, 'simpanData'])->name('simpanData');
+Route::post('/deleteItem', [BuatPesanan::class, 'deleteItem'])->name('deleteItem');
 
 Route::post('/tambahItem', [BuatPesanan::class, 'tambahItem'])->name('tambahItem');
 
-// Route::post('/pages/pesan', [BuatPesanan::class, 'tambahItem'])->name('tambahItem');
-
-// web.php
-Route::post('/transaksi', [BuatPesanan::class, 'showItem'])->name('showItem');
-
-Route::post('/pages/transaksi', [BuatPesanan::class, 'showItem'])->name('showItem');
-
-// Route::resource('/showItem', BuatPesanan::class);
-// Route::post('/pages/transaksi', [BuatPesanan::class, 'showItem'])->name('showItem');
-
-// Route::get('data/showItem', [BuatPesanan::class, 'showItem'])->name('showitem');
-
-// Route::get('/transaksi', [BuatPesanan::class, 'showItem'])->name('showitem');
-// Route::get('santri/tampil', [SantriController::class, 'tampilsantri'])->name('tampilsantri')->middleware('auth');
-
-// Route::get('/home', [LoginController::class, 'home'])->middleware('checkLogin');
+Route::post('/process', function (Request $request) {
+    $selectedValue = $request->input('optradio');
+    // dd($selectedValue);
+    return "Selected Value: $selectedValue";
+})->name('process');

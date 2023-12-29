@@ -1767,6 +1767,10 @@ input:checked + .toggle-bg {
   gap: 5rem;
 }
 
+.gap-3 {
+  gap: 0.75rem;
+}
+
 .gap-4 {
   gap: 1rem;
 }
@@ -2193,6 +2197,16 @@ input:checked + .toggle-bg {
   padding-bottom: 1.5rem;
 }
 
+.py-24 {
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+}
+
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
+}
+
 .pb-2 {
   padding-bottom: 0.5rem;
 }
@@ -2537,7 +2551,7 @@ input:checked + .toggle-bg {
 }
 
 :root {
-  --main-color: #5CB5A3;
+  --main-color: #29b8dbd8;
   --primary-color: #DCC6A2;
   --abu-color: #3E4C54;
   --bg-color: #E7F3EF;
@@ -2551,6 +2565,61 @@ body{
 
 .kategory{
   box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.25);
+}
+
+.btn-group {
+  .select {
+    position: relative;
+    input:checked+label {
+      background-color: var(--main-color);
+      &:hover,
+            &:focus,
+            &:active {
+        background-color: var(--main-color);
+      }
+    }
+    input {
+      opacity: 0;
+      position: absolute;
+    }
+    .button_select {
+      margin: 0 10px 10px 0;
+      display: flex;
+      background-color: transparent;
+      &:hover,
+            &:focus,
+            &:active {
+        background-color: transparent;
+      }
+    }
+  }
+}
+
+.option {
+  position: relative;
+  input {
+    opacity: 0;
+    position: absolute;
+  }
+  input:checked+span {
+    background-color: var(--main-color);
+    color: white;
+    &:hover,
+        &:focus,
+        &:active {
+      background-color: var(--main-color);
+      color: white;
+    }
+  }
+  .btn-option {
+    display: flex;
+    background-color: transparent;
+    &:hover,
+        &:focus,
+        &:active {
+      background-color: transparent;
+    }
+  }
 }
 
 .odd\:bg-white:nth-child(odd) {

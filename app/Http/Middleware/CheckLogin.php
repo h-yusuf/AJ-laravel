@@ -14,6 +14,7 @@ class CheckLogin
         // Cek apakah pengguna telah login
         if (Auth::check()) {
             return $next($request);
+            
             // return redirect()->away('http://127.0.0.1:8000/home')->with('succes','Login succes');
 
         }

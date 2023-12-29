@@ -9,9 +9,10 @@ class Keranjang extends Model
 {
     use HasFactory;
 
-    protected $table = 'keranjang'; // Sesuaikan dengan nama tabel di database
+    protected $table = 'keranjang'; 
 
     protected $fillable = [
+        'id_transaksi',
         'layanan_utama',
         'layanan_tambahan',
         'date',

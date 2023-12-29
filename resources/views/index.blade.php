@@ -98,7 +98,7 @@
               </div>
               <!-- Modal body -->
               <div class="p-4 md:p-5">
-                <form id="form" class="space-y-4" action="{{route('prosesLogin')}}" method="POST">
+                <form id="form" class="space-y-4" action="{{route('login')}}" method="POST">
                   @csrf
                   <div>
                     <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
@@ -163,7 +163,7 @@
               <!-- Modal body -->
 
 
-              <form class="max-w-sm mx-auto mt-6" action="{{route('prosesRegister')}}" method="POST">
+              <form class="max-w-sm mx-auto mt-6" action="{{route('register')}}" method="POST">
                 @csrf
                 <div class="mb-5">
                   <label for="repeat-password"
@@ -688,17 +688,32 @@
     Swal.fire({
   icon: "error",
   title: "Login failed.",
-  text: " Please check your email and password",
+  text: " {{ $message }}",
+});
+</script>
+@endif
+@if($message = Session::get('succes-register'))
+<script>
+    Swal.fire({
+  icon: "success",
+  title: "yeay",
+  text: "{{ $message }}",
 });
 </script>
 @endif
 
-@if(Session::get('warning'))
+@if($message = Session::get('logout'))
+<script>
+    Swal.fire('{{ $message }}');
+</script>
+@endif
+
+@if($message = Session::get('warning'))
 <script>
     Swal.fire({
   icon: "error",
   title: "Opps...",
-  text: "You need to login first.",
+  text: "{{ $message }}",
 });
 </script>
 @endif

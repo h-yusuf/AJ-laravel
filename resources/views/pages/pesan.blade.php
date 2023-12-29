@@ -3,9 +3,9 @@
 @section('konten')
 <div class="px-32">
     <div class="my-12">
-        <div class="rounded-md border min-w-max p-8 py-12 grid gap-4">
+        <div class="rounded-md border min-w-max px-24  py-12 grid gap-4">
             <h1 class="text-xl font-semibold text-center ">PesanJasa</h1>
-            <div class="grid mx-12 gap-4">
+            <div class="grid  gap-4">
                 <h2 class="text-lg">Jasa</h2>
                 <div class="">
                     <div class="w-full border rounded-lg p-4 flex justify-between  items-center bg-primary bg-opacity-5">
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="grid mx-12 gap-4">
+            <div class="grid  gap-4">
                 <h2 class="text-lg">Catatan :</h2>
 
                 <div

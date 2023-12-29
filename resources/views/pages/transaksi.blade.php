@@ -27,7 +27,7 @@
 
                 </div>
 
-                
+
 
                 {{-- @foreach ($dataKeranjang as $items) --}}
                 @forelse ($dataKeranjang as $item)
@@ -42,14 +42,22 @@
                                 <img src="asset/bx_chat.png" width="30" class="-mt-2">
                             </div>
                             <div class="grid justify-items-end gap-2">
+                                <form action="{{ route('deleteItem') }}" method="POST">
+                                    @csrf
+                                    <input type="hidden" name="item_id" value="{{ $item->id_transaksi }}">
+                                    <button type="submit">
+                                        <svg class="w-6 h-6 text-primary" aria-hidden="true"
+                                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 20">
+                                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                                stroke-width="2"
+                                                d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z" />
+                                        </svg>
+                                    </button>
+                                </form>
+
                                 <a href="">
 
-                                    <svg class="w-6 h-6 text-primary" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
-                                        fill="none" viewBox="0 0 18 20">
-                                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                            stroke-width="2"
-                                            d="M1 5h16M7 8v8m4-8v8M7 1h4a1 1 0 0 1 1 1v3H6V2a1 1 0 0 1 1-1ZM3 5h12v13a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5Z" />
-                                    </svg>
+
 
                                 </a>
                                 <h2>{{ $item->date }} </h2>
@@ -83,14 +91,13 @@
 
                     </div>
 
-                    @empty
-                        <p class="text-gray-500">Tidak ada data keranjang.</p>
-                    @endforelse
+                @empty
+                    <p class="text-gray-500">Tidak ada data keranjang.</p>
+                @endforelse
 
-                    {{-- {{ $dataKeranjang->links() }} --}}
+                {{-- {{ $dataKeranjang->links() }} --}}
 
-                </div>
             </div>
         </div>
-
-    @endsection
+    </div>
+@endsection
