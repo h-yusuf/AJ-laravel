@@ -88,10 +88,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'cici', 'cici@jrock.in', NULL, 'b1b3773a05c0ed0176787a4f1574ff0075f7521e', NULL, NULL, NULL),
+(1, 'cici', 'cici@jrock.in', NULL, 'b1b3773a05c0ed0176787a4f1574ff0075f7521e', NULL, NULL, NULL);
 --
 INSERT INTO `users` (`id_user`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'yusp', 'supp@jrock.in', NULL, 'b1b3773a05c0ed0176787a4f1574ff0075f7521e', NULL, NULL, NULL),
+(1, 'yusp', 'supp@jrock.in', NULL, 'b1b3773a05c0ed0176787a4f1574ff0075f7521e', NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
