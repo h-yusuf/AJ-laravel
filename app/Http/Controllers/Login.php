@@ -47,39 +47,39 @@ class LoginController extends Controller
     // }
 
 
-	public function index(){
-		return view('index');
-	}
-    public function prosesLogin(Request $request)
-    {
-		dd($request->all());
-        $email = $request->input('email');
-        $password = $request->input('password');
+// 	public function index(){
+// 		return view('index');
+// 	}
+//     public function prosesLogin(Request $request)
+//     {
+// 		dd($request->all());
+//         $email = $request->input('email');
+//         $password = $request->input('password');
 
-        $validasi = $this->userModel
-            ->where('email', $email)
-            ->where('password', sha1($password))
-            ->first();
+//         $validasi = $this->userModel
+//             ->where('email', $email)
+//             ->where('password', sha1($password))
+//             ->first();
 
-        if ($validasi === null) {
-            $pesan = 'Kesalahan : Data pengguna tidak ada';
-            session()->flash('msg', $pesan);
+//         if ($validasi === null) {
+//             $pesan = 'Kesalahan : Data pengguna tidak ada';
+//             session()->flash('msg', $pesan);
 
-            return redirect()->route('/'); // Sesuaikan dengan nama route login
-        } else {
-            $userData = [
-                'nama' => $validasi['nama'],
-                'email' => $validasi['email'],
-                'id_user' => $validasi['id_user'],
-            ];
+//             return redirect()->route('/'); // Sesuaikan dengan nama route login
+//         } else {
+//             $userData = [
+//                 'nama' => $validasi['nama'],
+//                 'email' => $validasi['email'],
+//                 'id_user' => $validasi['id_user'],
+//             ];
 
-            Session::put("LoggedUserData", $userData);
+//             Session::put("LoggedUserData", $userData);
 
-            $dataUpdate = ['last_login' => now()];
+//             $dataUpdate = ['last_login' => now()];
 
-            $updateLogin = $this->userModel->where('id_user', $validasi['id_user'])->update($dataUpdate);
+//             $updateLogin = $this->userModel->where('id_user', $validasi['id_user'])->update($dataUpdate);
 
-            return redirect()->route('/home'); // Sesuaikan dengan nama route produk
-        }
-    }
+//             return redirect()->route('/home'); // Sesuaikan dengan nama route produk
+//         }
+//     }
 }

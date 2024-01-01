@@ -13,7 +13,10 @@ class BuatPesanan extends Controller
     }
     public function tambahItem(Request $request)
     {
-        $idTransaksi = sprintf("D%03d", Keranjang::max('id_transaksi') + 1);
+        // $idTransaksi = Keranjang::max('id_transaksi') + 1;
+        $numericPart = (int)substr(Keranjang::max('id_transaksi'), 1) + 1;
+        $idTransaksi = "D" . str_pad($numericPart, 3, '0', STR_PAD_LEFT);
+        // dd($idTransaksi);
         $data = [
             'id_transaksi' => $idTransaksi,
             'layanan_utama' => $request->input('layananUtama'),
@@ -42,7 +45,7 @@ class BuatPesanan extends Controller
         // dd($item);
 
         return redirect()->route('showItem');
- 
+
     }
 
     public function showItem()

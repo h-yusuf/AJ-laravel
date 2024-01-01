@@ -246,6 +246,7 @@
                                       name="password_confirmation" required autocomplete="new-password" />
           
                       <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+
                   </div>
           
                   <div class="flex items-center justify-end mt-4">
@@ -259,7 +260,9 @@
                   </div>
               </form>
               </div>
+
               {{-- old form register --}}
+              
               {{-- <form class="max-w-sm mx-auto mt-6" action="{{route('register')}}" method="POST">
                 @csrf
                 <div class="mb-5">
@@ -779,6 +782,7 @@
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 {{-- error register or login --}}
+
 @if(count($errors) > 0)
 <script>
     Swal.fire({
