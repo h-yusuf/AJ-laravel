@@ -10,21 +10,21 @@
           <h1 class="text-base font-medium">BENGKEL</h1>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mobil</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Mobil</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Motor</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Motor</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Speda</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Speda</label>
           </div>
         </div>
 
@@ -32,16 +32,16 @@
           <h1 class="text-base font-medium">Kota</h1>
           <div class="flex items-center">
             <input checked id="default-radio-1"  type="radio" value="" name="default-radio"
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Sleman, Yogyakarta</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Sleman, Yogyakarta</label>
           </div>
           <div class="flex items-center gap-2">
             <input  id="default-radio-2" type="radio" value="" name="default-radio"
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500"
               data-dropdown-trigger="hover"
-              class="  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  py-1.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              class="  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm  py-1.5 text-center inline-flex items-center"
               type="button">Other Location <svg class="w-2.5 h-2.5 ms-3" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -53,23 +53,23 @@
 
           <!-- Dropdown menu -->
           <div id="dropdownDelay"
-            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-            <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
+            class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+            <ul class="py-2 text-sm text-gray-700" aria-labelledby="dropdownDelayButton">
               <li>
                 <a href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Bantul</a>
+                  class="block px-4 py-2 hover:bg-gray-100">Bantul</a>
               </li>
               <li>
-                <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Kulon
+                <a href="#" class="block px-4 py-2 hover:bg-gray-100">Kulon
                   Progo</a>
               </li>
               <li>
                 <a href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Yogyakarta</a>
+                  class="block px-4 py-2 hover:bg-gray-100">Yogyakarta</a>
               </li>
               <li>
                 <a href="#"
-                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Gunung
+                  class="block px-4 py-2 hover:bg-gray-100">Gunung
                   Kidul</a>
               </li>
             </ul>
@@ -81,27 +81,27 @@
           <h1 class="text-base font-medium">Kategori Lainya</h1>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Kesehatan</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Kesehatan</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Service Rumah</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Service Rumah</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Alat Berat</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Alat Berat</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Fashion</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Fashion</label>
           </div>
         </div>
 
@@ -109,39 +109,39 @@
           <h1 class="text-base font-medium">Rating</h1>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">******</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">******</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">*****</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">*****</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">****</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">****</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">***</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">***</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">**</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">**</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">*</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">*</label>
           </div>
         </div>
 
@@ -149,16 +149,16 @@
           <h1 class="text-base font-medium">Harga</h1>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Harga Miimum</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Harga Miimum</label>
           </div>
 
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
-              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
+              class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 focus:ring-2">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Harga Maksimum</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900">Harga Maksimum</label>
           </div>
         </div>
 

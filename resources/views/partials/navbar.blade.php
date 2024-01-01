@@ -35,10 +35,10 @@
 	   <div class="flex items-center gap-8 w-1/2 justify-end ">
 		 <form class="w-1/2">
 		   <label for="default-search"
-			 class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+			 class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
 		   <div class="relative">
 			 <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
-			   <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+			   <svg class="w-4 h-4 text-gray-500" aria-hidden="true"
 				 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
 				 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
 				   d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
@@ -88,13 +88,25 @@
 				 <img class="w-10 h-10 rounded-full" src="../../asset/PP.png" alt="Jese Leos" />
 			   </a>
 			   <div>
-				<form action="{{route('logout')}}">
-
+				<form method="POST" action="{{ route('logout') }}">
+					@csrf
 					<button type="submit"
-					  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+					  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 focus:outline-none">
 					  log out
 					</button>
+					{{-- <x-dropdown-link :href="route('logout')"
+							onclick="event.preventDefault();
+										this.closest('form').submit();">
+						{{ __('Log Out') }}
+					</x-dropdown-link> --}}
 				</form>
+				{{-- <form action="{{route('logout')}}">
+
+					<button type="submit"
+					  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-xs px-3 py-1.5 focus:outline-none">
+					  log out
+					</button>
+				</form> --}}
 			   </div>
 			 </div>
 			 <p class="text-base font-semibold leading-none text-gray-900">
@@ -105,18 +117,18 @@
 			 </p>
 			 <p class="mb-4 text-sm">
 			   Open-source contributor. Building
-			   <a href="#" class="text-blue-600 dark:text-blue-500 hover:underline">flowbite.com</a>.
+			   <a href="#" class="text-blue-600 hover:underline">flowbite.com</a>.
 			 </p>
 			 <ul class="flex text-sm">
 			   <li class="me-2">
 				 <a href="#" class="hover:underline">
-				   <span class="font-semibold text-gray-900 dark:text-white">799</span>
+				   <span class="font-semibold text-gray-900">799</span>
 				   <span>Following</span>
 				 </a>
 			   </li>
 			   <li>
 				 <a href="#" class="hover:underline">
-				   <span class="font-semibold text-gray-900 dark:text-white">3,758</span>
+				   <span class="font-semibold text-gray-900">3,758</span>
 				   <span>Followers</span>
 				 </a>
 			   </li>

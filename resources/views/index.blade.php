@@ -5,11 +5,13 @@
   <title>Ada Jasa Web</title>
   
   <link rel="website icon" style="border-radius: 50%" href="icon/icon.png" type="png" />
-  <link rel="stylesheet" href="dist/output.css" type="text/css"/>
+  <link rel="stylesheet" href="css/output.css" type="text/css"/>
   <!-- <link rel="stylesheet" href="styles.css"> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
   <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/flowbite.min.css" rel="stylesheet" /> -->
+   <!-- Scripts -->
+   @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
@@ -46,10 +48,10 @@
       <div class="flex items-center gap-8 w-1/2 justify-end">
         <form class="w-1/2">
           <label for="default-search"
-            class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            class="mb-2 text-sm font-medium text-gray-900 sr-only">Search</label>
           <div class="relative">
             <div class="absolute inset-y-0 end-0 flex items-center pe-3 pointer-events-none">
-              <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+              <svg class="w-4 h-4 text-gray-500" aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                   d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
@@ -61,15 +63,15 @@
           </div>
         </form>
         <div class="flex gap-4 items-center">
-          <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-            class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800 font-medium rounded-lg text-sm py-2 p-0.5 px-5 text-center ">
+          <button id="log_in" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
+            class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-sm py-2 p-0.5 px-5 text-center ">
             Log in
           </button>
-          <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-            class="relative inline-flex items-center justify-center p-0.5  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-green-200 dark:focus:ring-green-800">
+          <button id="reg" data-modal-target="register" data-modal-toggle="register"
+            class="relative inline-flex items-center justify-center p-0.5  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200">
             <span
-              class="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-              Sig in
+              class="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
+              Register
             </span>
           </button>
         </div>
@@ -79,14 +81,14 @@
           class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
           <div class="relative p-4 w-full max-w-md max-h-full">
             <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+            <div class="relative bg-white rounded-lg shadow">
               <!-- Modal header -->
-              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                <h3 class="text-xl font-semibold text-gray-900 dark:text-white">
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                <h3 class="text-xl font-semibold text-gray-900">
                   Sign in to our platform
                 </h3>
                 <button type="button"
-                  class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                  class="end-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
                   data-modal-hide="authentication-modal">
                   <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 14 14">
@@ -98,60 +100,104 @@
               </div>
               <!-- Modal body -->
               <div class="p-4 md:p-5">
-                <form id="form" class="space-y-4" action="{{route('login')}}" method="POST">
+                <form method="POST" action="{{ route('login') }}">
+                  @csrf
+          
+                  <!-- Email Address -->
+                  <div>
+                      <x-input-label for="email" :value="__('Email')" />
+                      <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus autocomplete="username" />
+                      <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                  </div>
+          
+                  <!-- Password -->
+                  <div class="mt-4">
+                      <x-input-label for="password" :value="__('Password')" />
+          
+                      <x-text-input id="password" class="block mt-1 w-full"
+                                      type="password"
+                                      name="password"
+                                      required autocomplete="current-password" />
+          
+                      <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                  </div>
+          
+                  <!-- Remember Me -->
+                  <div class="block mt-4">
+                      <label for="remember_me" class="inline-flex items-center">
+                          <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:ring-indigo-500" name="remember">
+                          <span class="ms-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
+                      </label>
+                  </div>
+          
+                  <div class="flex items-center justify-end mt-4">
+                      @if (Route::has('password.request'))
+                          <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">
+                              {{ __('Forgot your password?') }}
+                          </a>
+                      @endif
+          
+                      <x-primary-button class="ms-3">
+                          {{ __('Log in') }}
+                      </x-primary-button>
+                  </div>
+              </form>
+                {{-- old form log in --}}
+                {{-- <form id="form" class="space-y-4" action="{{route('login')}}" method="POST">
                   @csrf
                   <div>
-                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                    <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your
                       email</label>
                     <input type="email" name="email" id="email"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                       placeholder="name@company.com" required>
                   </div>
                   <div>
-                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                    <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Your
                       password</label>
                     <input type="password" name="password" id="password" placeholder="••••••••"
-                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white"
+                      class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                       required>
                   </div>
                   <div class="flex justify-between">
                     <div class="flex items-start">
                       <div class="flex items-center h-5">
                         <input id="remember" type="checkbox" value=""
-                          class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-600 dark:border-gray-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
-                          required>
+                          class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300">
                       </div>
-                      <label for="remember" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember
+                      <label for="remember" class="ms-2 text-sm font-medium text-gray-900">Remember
                         me</label>
                     </div>
-                    <a href="#" class="text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                    <a href="#" class="text-sm text-blue-700 hover:underline">Lost Password?</a>
                   </div>
                   <button type="submit"
-                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login
+                    class="w-full text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Login
                     to your account</button>
-                  <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
-                    Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create
+                  <div class="text-sm font-medium text-gray-500">
+                    Not registered? <a href="#" class="text-blue-700 hover:underline">Create
                       account</a>
                   </div>
-                </form>
+                </form> --}}
               </div>
             </div>
           </div>
         </div>
-
-        <div id="crud-modal" tabindex="-1" aria-hidden="true"
+       {{-- @if ($errors->get('name'))
+          <div>error</div>
+       @endif     --}}
+        <div id="register" tabindex="-1" aria-hidden="true"
           class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
           <div class="relative p-4 w-full max-w-md max-h-full ">
             <!-- Modal content -->
-            <div class="relative bg-white rounded-lg shadow dark:bg-gray-700 pb-6">
+            <div class="relative bg-white rounded-lg shadow pb-6">
               <!-- Modal header -->
-              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t dark:border-gray-600">
-                <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
-                  Create New Product
+              <div class="flex items-center justify-between p-4 md:p-5 border-b rounded-t">
+                <h3 class="text-lg font-semibold text-gray-900">
+                  Register
                 </h3>
                 <button type="button"
-                  class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                  data-modal-toggle="crud-modal">
+                  class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ms-auto inline-flex justify-center items-center"
+                  data-modal-toggle="register">
                   <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 14 14">
                     <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -161,46 +207,97 @@
                 </button>
               </div>
               <!-- Modal body -->
-
-
-              <form class="max-w-sm mx-auto mt-6" action="{{route('register')}}" method="POST">
+              <div class="p-4 md:p-5">
+                <form method="POST" action="{{ route('register') }}">
+                  @csrf
+          
+                  <!-- Name -->
+                  <div>
+                      <x-input-label for="name" :value="__('Name')" />
+                      <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                      <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                  </div>
+          
+                  <!-- Email Address -->
+                  <div class="mt-4">
+                      <x-input-label for="email" :value="__('Email')" />
+                      <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                      <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                  </div>
+          
+                  <!-- Password -->
+                  <div class="mt-4">
+                      <x-input-label for="password" :value="__('Password')" />
+          
+                      <x-text-input id="password" class="block mt-1 w-full"
+                                      type="password"
+                                      name="password"
+                                      required autocomplete="new-password" />
+          
+                      <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                  </div>
+          
+                  <!-- Confirm Password -->
+                  <div class="mt-4">
+                      <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+          
+                      <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                      type="password"
+                                      name="password_confirmation" required autocomplete="new-password" />
+          
+                      <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
+                  </div>
+          
+                  <div class="flex items-center justify-end mt-4">
+                      <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
+                          {{ __('Already registered?') }}
+                      </a>
+          
+                      <x-primary-button class="ms-4">
+                          {{ __('Register') }}
+                      </x-primary-button>
+                  </div>
+              </form>
+              </div>
+              {{-- old form register --}}
+              {{-- <form class="max-w-sm mx-auto mt-6" action="{{route('register')}}" method="POST">
                 @csrf
                 <div class="mb-5">
                   <label for="repeat-password"
-                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Youre Name</label>
+                    class="block mb-2 text-sm font-medium text-gray-900">Youre Name</label>
                   <input type="text" id="name" name="name"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     required>
                 </div>
                 <div class="mb-5">
-                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                  <label for="email" class="block mb-2 text-sm font-medium text-gray-900">Your
                     email</label>
                   <input type="email" name="email" id="email"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     placeholder="name@flowbite.com" required>
                 </div>
                 <div class="mb-5">
-                  <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                  <label for="password" class="block mb-2 text-sm font-medium text-gray-900">Your
                     password</label>
                   <input type="password" id="password" name="password"
-                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+                    class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                     required>
                 </div>
                
                 <div class="flex items-start mb-5">
                   <div class="flex items-center h-5">
                     <input id="terms" type="checkbox" value=""
-                      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800"
+                      class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300"
                       required>
                   </div>
-                  <label for="terms" class="ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">I agree with the
-                    <a href="#" class="text-blue-600 hover:underline dark:text-blue-500">terms and
+                  <label for="terms" class="ms-2 text-sm font-medium text-gray-900">I agree with the
+                    <a href="#" class="text-blue-600 hover:underline">terms and
                       conditions</a></label>
                 </div>
                 <button type="submit"
-                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register
+                  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center">Register
                   new account</button>
-              </form>
+              </form> --}}
 
             </div>
           </div>
@@ -246,8 +343,8 @@
         class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         data-carousel-prev>
         <span
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+          <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="M5 1 1 5l4 4" />
@@ -259,8 +356,8 @@
         class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
         data-carousel-next>
         <span
-          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
-          <svg class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180" aria-hidden="true"
+          class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 group-hover:bg-white/50 group-focus:ring-4 group-focus:ring-white group-focus:outline-none">
+          <svg class="w-4 h-4 text-white rtl:rotate-180" aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
               d="m1 9 4-4-4-4" />
@@ -279,7 +376,7 @@
       <div class="mt-4 relative overflow-x-hidden">
         <div class="w-screen min-w-max flex gap-4">
           <div
-            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
           >
             <a href="#">
               <img
@@ -335,7 +432,7 @@
           </div>
   
           <div
-            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
           >
             <a href="#">
               <img
@@ -391,7 +488,7 @@
           </div>
   
           <div
-            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
           >
             <a href="#">
               <img
@@ -447,7 +544,7 @@
           </div>
   
           <div
-            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
           >
             <a href="#">
               <img
@@ -503,7 +600,7 @@
           </div>
   
           <div
-            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+            class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
           >
             <a href="#">
               <img
@@ -583,10 +680,10 @@
         </div>
         <div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">
               Contact
             </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <ul class="text-gray-500 font-medium">
               <li class="mb-4">
                 <a href="" class="hover:underline">WhatsApp</a>
               </li>
@@ -596,10 +693,10 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">
               Follow us
             </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <ul class="text-gray-500 font-medium">
               <li class="mb-4">
                 <a href="https://github.com/h-yusuf" class="hover:underline">Github</a>
               </li>
@@ -609,10 +706,10 @@
             </ul>
           </div>
           <div>
-            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+            <h2 class="mb-6 text-sm font-semibold text-gray-900 uppercase">
               Legal
             </h2>
-            <ul class="text-gray-500 dark:text-gray-400 font-medium">
+            <ul class="text-gray-500 font-medium">
               <li class="mb-4">
                 <a href="#" class="hover:underline">Privacy Policy</a>
               </li>
@@ -623,13 +720,13 @@
           </div>
         </div>
       </div>
-      <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+      <hr class="my-6 border-gray-200 sm:mx-auto lg:my-8" />
       <div class="sm:flex sm:items-center sm:justify-between">
-        <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023
+        <span class="text-sm text-gray-500 sm:text-center">© 2023
           <a href="https://flowbite.com/" class="hover:underline">AdaJasa™</a>. All Rights Reserved.
         </span>
         <div class="flex mt-4 sm:justify-center sm:mt-0">
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white">
+          <a href="#" class="text-gray-500 hover:text-gray-900">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 8 19">
               <path fill-rule="evenodd"
@@ -638,7 +735,7 @@
             </svg>
             <span class="sr-only">Facebook page</span>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+          <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 21 16">
               <path
@@ -646,7 +743,7 @@
             </svg>
             <span class="sr-only">Discord community</span>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+          <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 20 17">
               <path fill-rule="evenodd"
@@ -655,7 +752,7 @@
             </svg>
             <span class="sr-only">Twitter page</span>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+          <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 20 20">
               <path fill-rule="evenodd"
@@ -664,7 +761,7 @@
             </svg>
             <span class="sr-only">GitHub account</span>
           </a>
-          <a href="#" class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5">
+          <a href="#" class="text-gray-500 hover:text-gray-900 ms-5">
             <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
               viewBox="0 0 15 15">
               <path fill-rule="evenodd"
@@ -681,15 +778,13 @@
   </footer>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-
-
-@if($message = Session::get('failed'))
+{{-- error register or login --}}
+@if(count($errors) > 0)
 <script>
     Swal.fire({
-  icon: "error",
-  title: "Login failed.",
-  text: " {{ $message }}",
-});
+      icon: "error",
+      title: "Failed."
+    });
 </script>
 @endif
 @if($message = Session::get('succes-register'))
@@ -704,7 +799,11 @@
 
 @if($message = Session::get('logout'))
 <script>
-    Swal.fire('{{ $message }}');
+    Swal.fire({
+      icon: "success",
+      title: "Logout",
+      text: "{{ $message }}",
+    });
 </script>
 @endif
 
