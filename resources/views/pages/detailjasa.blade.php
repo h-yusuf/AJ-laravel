@@ -4,6 +4,7 @@
     <div class="px-32">
         <div class="my-12">
             <div class="rounded-md border  p-8 py-12 grid gap-4 ">
+                
                 <form action="{{ route('tambahItem') }}" method="POST" class="grid mx-12 gap-4 ">
                     @csrf
                     <h1 class="text-xl font-semibold text-center ">Detail Jasa</h1>

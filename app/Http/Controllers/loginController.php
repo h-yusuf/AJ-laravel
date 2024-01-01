@@ -55,7 +55,7 @@ public function login(Request $request)
         $data = [
             'name' => $request->input('name'),
             'email' => $request->input('email'),
-            'password' => sha1($request->input('password')),
+            'password' => sha1($request->input('password'))
         ];
 
         User::create($data);

@@ -63,6 +63,7 @@ Route::post('/register', [LoginController::class, 'register'])->name('register')
 
 Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], function () {
     
+    
 });
 
 
