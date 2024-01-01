@@ -5,7 +5,7 @@
   <title>Ada Jasa Web</title>
   
   <link rel="website icon" style="border-radius: 50%" href="icon/icon.png" type="png" />
-  <link rel="stylesheet" href="dist/output.css" type="text/css"/>
+  <link rel="stylesheet" href="css/output.css" type="text/css"/>
   <!-- <link rel="stylesheet" href="styles.css"> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.1.1/flowbite.min.js"></script>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
