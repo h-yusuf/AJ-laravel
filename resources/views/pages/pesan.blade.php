@@ -40,7 +40,8 @@
                 </div>
 
 
-                <div class="flex gap-2 items-center">
+                <div class="flex justify-between ">
+                    <div class="flex gap-2 items-center">
                     <svg class="w-6 h-6 text-primary" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                         fill="none" viewBox="0 0 17 21">
                         <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5">
@@ -51,7 +52,8 @@
                     </svg>
                     <h3 class=" text-base leading-4 text-primary">
                         {{ $data['alamat'] }}
-                    </h3>
+                    </h3> </div>
+                    <button  class="text-third underline">edit</button>
                 </div>
 
             </div>
@@ -66,7 +68,7 @@
                     Total Pesanan
                 </h2>
                 <h2 class="text-base text-gray-500">
-                    (1 jasa pada pukul 11.00 AM)
+                    (1 jasa pada pukul {{ $data['time'] }})
                 </h2>
             </div>
             <div class="flex flex-col gap-2">
@@ -184,7 +186,7 @@
                     @foreach ($data as $key => $value)
                         <input type="hidden" name="{{ $key }}" value="{{ $value }}">
                     @endforeach
-                    <button class="w-full py-4 rounded-lg bg-primary bg-opacity-10 text-primary font-semibold"
+                    <button class="w-full py-4 rounded-lg bg-primary text-white font-semibold"
                         type="submit">Bayar Sekarang</button>
 
                 </form>

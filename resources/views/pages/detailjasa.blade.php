@@ -25,22 +25,19 @@
                     <div class="w-full p-4 rounded-lg  bg-primary bg-opacity-5">
                         <h2 class="text-lg">Tentang Jasa :</h2>
                         <p class="text-base text-gray-500 ">
-                            layanan profesional yang menyediakan pijatan atau sentuhan terapeutik untuk mempromosikan
-                            relaksasi, kesejahteraan, dan pengurangan stres. Pijet dapat dilakukan oleh terapis
-                            berlisensi atau ahli pijat yang terampil, menggunakan teknik-teknik khusus untuk mengurangi
-                            ketegangan otot, meningkatkan sirkulasi darah, dan meredakan berbagai masalah fisik.
+                            Menyediakan solusi terdepan untuk perbaikan, pemeliharaan, dan peningkatan kinerja perangkat Anda. Tim profesional kami ahli dalam menangani berbagai masalah teknis, mulai dari perbaikan perangkat keras hingga pemulihan data. Kami menawarkan layanan cepat dan andal untuk memastikan perangkat Anda berfungsi optimal. Dengan layanan pelanggan yang ramah dan harga yang kompetitif, kami berkomitmen memberikan pengalaman pelayanan yang memuaskan. Percayakan perangkat Anda kepada kami, dan biarkan kami mengembalikan kinerja maksimalnya.
                         </p>
                     </div>
                     <h2 class="text-lg">Layanan Utama</h2>
-                    <div class="flex gap-4 btn-group">
+                    <div class="flex gap-4 btn-group text-black">
                         <label
-                            class="option w-full border rounded-lg flex justify-between  items-center bg-primary text-white">
+                            class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
                             <input type="radio" value="Service komputer" name="layananUtama">
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
 
                                 <div class="flex gap-6">
                                     <img class="rounded-md w-24 h-24" src="asset/kategory.png" alt="">
-                                    <div class="">
+                                    <div class=" ">
                                         <h2 class="font-semibold text-xl">Service komputer</h2>
                                         <h2>Normal</h2>
                                         <h3>Rp 120.000</h3>
@@ -50,7 +47,7 @@
 
                         </label>
                         <label
-                            class="option w-full border rounded-lg flex justify-between  items-center bg-primary text-white">
+                            class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
                             <input type="radio" value="Service Laptop" name="layananUtama">
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
 
@@ -70,13 +67,13 @@
                     <h2 class="text-lg">Layanan Tambahan</h2>
                     <div class="flex gap-4 btn-group">
                         <label
-                            class="option w-full border rounded-lg flex justify-between  items-center bg-primary text-white">
+                            class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
                             <input type="radio" value="Fast Service Garansi" name="layananTambahan">
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
 
                                 <div class="flex gap-6">
                                     <img class="rounded-md w-24 h-24" src="asset/kategory.png" alt="">
-                                    <div class="">
+                                    <div class=" ">
                                         <h2 class="font-semibold text-xl">Service Fast</h2>
                                         <h2>Garansi</h2>
                                         <h3>Rp 150.000</h3>
@@ -86,7 +83,7 @@
 
                         </label>
                         <label
-                            class="option w-full border rounded-lg flex justify-between  items-center bg-primary text-white">
+                            class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
                             <input type="radio" value="Fast Service" name="layananTambahan">
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
 
@@ -107,8 +104,8 @@
 
                     <div class="grid grid-cols-3 py-4">
 
-                        <h2 class="text-lg font-semibold">Pilih Tanggal :</h2>
-                        <h2 class="text-lg font-semibold">Pilih Jam :</h2>
+                        <h2 class="text-lg ">Pilih Tanggal :</h2>
+                        <h2 class="text-lg ">Pilih Jam :</h2>
                     </div>
                     <div class="flex justify-between gap-20">
 
@@ -147,48 +144,48 @@
 
                             <div class="grid grid-cols-3 gap-2 w-full h-1/2 btn-group">
                                 <label
-                                    class="option bg-white">
+                                    class="option bg-secondary rounded-lg text-white">
                                     <input type="radio" value="09:00 AM" name="time">
                                     <span class="flex justify-center btn-option py-2.5 px-5 w-full h-full items-center rounded-lg ">09:00 AM</span>
                                 </label>
 
                                 <label
-                                    class="option bg-primary rounded-lg text-white">
+                                    class="option bg-white rounded-lg text-black border border-primary">
                                     <input type="radio" value="10:00 AM" name="time">
                                     <span class="flex justify-center btn-option py-2.5 px-5 w-full h-full items-center rounded-lg ">10:00 AM</span>
                                 </label>
                                 <label
-                                    class="option bg-primary rounded-lg text-white">
+                                    class="option bg-white rounded-lg text-black border border-primary">
                                     <input type="radio" value="11:00 AM" name="time">
                                     <span class="flex justify-center btn-option py-2.5 px-5 w-full h-full items-center rounded-lg ">11:00 AM</span>
                                 </label>
                                 <label
-                                    class="option bg-primary rounded-lg text-white">
+                                    class="option bg-white rounded-lg text-black border border-primary">
                                     <input type="radio" value="12:00 AM" name="time">
                                     <span class="flex justify-center btn-option py-2.5 px-5 w-full h-full items-center rounded-lg ">12:00 AM</span>
                                 </label>
                                 <label
-                                    class="option bg-white">
+                                    class="option bg-secondary rounded-lg text-white">
                                     <input type="radio" value="13:00 AM" name="time">
                                     <span class="flex justify-center btn-option py-2.5 px-5 w-full h-full items-center rounded-lg ">13:00 AM</span>
                                 </label>
                                 <label
-                                    class="option bg-primary rounded-lg text-white">
+                                    class="option bg-white rounded-lg text-black border border-primary">
                                     <input type="radio" value="15:00 AM" name="time">
                                     <span class="flex justify-center btn-option py-2.5 px-5 w-full h-full items-center rounded-lg ">15:00 AM</span>
                                 </label>
                                 <label
-                                    class="option bg-primary rounded-lg text-white">
+                                    class="option bg-white rounded-lg text-black border border-primary">
                                     <input type="radio" value="16:00 AM" name="time">
                                     <span class="flex justify-center btn-option py-2.5 px-5 w-full h-full items-center rounded-lg ">16:00 AM</span>
                                 </label>
                                 <label
-                                    class="option bg-primary rounded-lg text-white">
+                                    class="option bg-white rounded-lg text-black border border-primary">
                                     <input type="radio" value="20:00 AM" name="time">
                                     <span class="flex justify-center btn-option py-2.5 px-5 w-full h-full items-center rounded-lg ">20:00 AM</span>
                                 </label>
                                 <label
-                                    class="option bg-white">
+                                    class="option bg-secondary rounded-lg text-white">
                                     <input type="radio" value="21:00 AM" name="time">
                                     <span class="flex justify-center btn-option py-2.5 px-5 w-full h-full items-center rounded-lg ">21:00 AM</span>
                                 </label>
@@ -210,8 +207,8 @@
                         class="w-full h-32  rounded-lg flex justify-between resize-none items-center bg-primary bg-opacity-5">
                     </textarea>
                     <div class="flex gap-4">
-                        <button class="w-full py-4 rounded-lg bg-primary bg-opacity-10  font-semibold" type="submit"> <a
-                                class="w-full">Buat Pesanan</a></button>
+                        <button class="w-full py-4 rounded-lg bg-primary font-semibold" type="submit"> <a
+                                class="w-full text-white">Buat Pesanan</a></button>
                         <button class="p-2 px-4 rounded-lg bg-primary bg-opacity-10">
                             <svg class="w-6 h-6 text-primary" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
                                 fill="none" viewBox="0 0 20 18">

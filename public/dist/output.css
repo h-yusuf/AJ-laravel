@@ -2028,6 +2028,11 @@ input:checked + .toggle-bg {
   background-color: rgb(12 75 110 / var(--tw-bg-opacity));
 }
 
+.bg-secondary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(217 217 217 / var(--tw-bg-opacity));
+}
+
 .bg-transparent {
   background-color: transparent;
 }
@@ -2051,20 +2056,6 @@ input:checked + .toggle-bg {
 
 .bg-opacity-5 {
   --tw-bg-opacity: 0.05;
-}
-
-.bg-gradient-to-br {
-  background-image: linear-gradient(to bottom right, var(--tw-gradient-stops));
-}
-
-.from-green-400 {
-  --tw-gradient-from: #31C48D var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(49 196 141 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.to-blue-600 {
-  --tw-gradient-to: #1C64F2 var(--tw-gradient-to-position);
 }
 
 .p-0 {
@@ -2125,6 +2116,11 @@ input:checked + .toggle-bg {
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
+}
+
+.px-24 {
+  padding-left: 6rem;
+  padding-right: 6rem;
 }
 
 .px-3 {
@@ -2195,16 +2191,6 @@ input:checked + .toggle-bg {
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
-}
-
-.py-24 {
-  padding-top: 6rem;
-  padding-bottom: 6rem;
-}
-
-.px-24 {
-  padding-left: 6rem;
-  padding-right: 6rem;
 }
 
 .pb-2 {
@@ -2357,6 +2343,11 @@ input:checked + .toggle-bg {
   letter-spacing: 0.05em;
 }
 
+.text-black {
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(28 100 242 / var(--tw-text-opacity));
@@ -2415,6 +2406,11 @@ input:checked + .toggle-bg {
 .text-primary {
   --tw-text-opacity: 1;
   color: rgb(12 75 110 / var(--tw-text-opacity));
+}
+
+.text-third {
+  --tw-text-opacity: 1;
+  color: rgb(62 0 255 / var(--tw-text-opacity));
 }
 
 .text-white {
@@ -2551,7 +2547,7 @@ input:checked + .toggle-bg {
 }
 
 :root {
-  --main-color: #29b8dbd8;
+  --main-color: #0C4B6E;
   --primary-color: #DCC6A2;
   --abu-color: #3E4C54;
   --bg-color: #E7F3EF;
@@ -2609,6 +2605,7 @@ body{
         &:active {
       background-color: var(--main-color);
       color: white;
+      text: black
     }
   }
   .btn-option {
@@ -2640,11 +2637,6 @@ body{
 .hover\:bg-blue-50:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(235 245 255 / var(--tw-bg-opacity));
-}
-
-.hover\:bg-blue-600:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(28 100 242 / var(--tw-bg-opacity));
 }
 
 .hover\:bg-blue-700:hover {
@@ -2681,18 +2673,9 @@ body{
   --tw-bg-opacity: 0.1;
 }
 
-.hover\:bg-gradient-to-bl:hover {
-  background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
-}
-
 .hover\:text-blue-600:hover {
   --tw-text-opacity: 1;
   color: rgb(28 100 242 / var(--tw-text-opacity));
-}
-
-.hover\:text-blue-700:hover {
-  --tw-text-opacity: 1;
-  color: rgb(26 86 219 / var(--tw-text-opacity));
 }
 
 .hover\:text-gray-400:hover {
@@ -2792,9 +2775,9 @@ body{
   --tw-ring-color: rgb(249 250 251 / var(--tw-ring-opacity));
 }
 
-.focus\:ring-green-200:focus {
+.focus\:ring-secondary:focus {
   --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(188 240 218 / var(--tw-ring-opacity));
+  --tw-ring-color: rgb(217 217 217 / var(--tw-ring-opacity));
 }
 
 .active\:bg-gray-100:active {
@@ -2827,16 +2810,6 @@ body{
 
 .group:hover .group-hover\:bg-opacity-0 {
   --tw-bg-opacity: 0;
-}
-
-.group:hover .group-hover\:from-green-400 {
-  --tw-gradient-from: #31C48D var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(49 196 141 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
-.group:hover .group-hover\:to-blue-600 {
-  --tw-gradient-to: #1C64F2 var(--tw-gradient-to-position);
 }
 
 .group:focus .group-focus\:outline-none {
@@ -3158,11 +3131,6 @@ body{
 :is(:where(.dark) .dark\:focus\:ring-gray-600:focus) {
   --tw-ring-opacity: 1;
   --tw-ring-color: rgb(75 85 99 / var(--tw-ring-opacity));
-}
-
-:is(:where(.dark) .dark\:focus\:ring-green-800:focus) {
-  --tw-ring-opacity: 1;
-  --tw-ring-color: rgb(3 84 63 / var(--tw-ring-opacity));
 }
 
 :is(:where(.dark) .dark\:focus\:ring-offset-gray-700:focus) {

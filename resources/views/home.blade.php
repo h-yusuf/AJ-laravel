@@ -66,14 +66,14 @@
       <div class="grid gap-8 grid-cols-3 px-14">
         <a href="/kategory"
           class="flex kategory gap-8 items-center p-4 borde-shadow-sm w-full roun rounded-xl hover:bg-blue-50 ">
-          <img class="h-10" src="../../icon/Kategory/carbon_vehicle-services.png" alt="" />
-          <h1 class="text-2xl font-medium">Bengkel</h1>
+          <img class="h-10" src="../../icon/Kategory/ic_outline-laptop.png" alt="" />
+          <h1 class="text-2xl font-medium">Teknologi</h1>
         </a>
 
         <div
           class="flex gap-8 kategory items-center p-4  drop-shadow-sm w-full rounded-xl hover:bg-blue-50 ">
-          <img class="h-10" src="../../icon/Kategory/carbon_vehicle-services.png" alt="" />
-          <h1 class="text-2xl font-medium">Bengkel</h1>
+          <img class="h-10" src="../../icon/Kategory/bi_house-gear.png" alt="" />
+          <h1 class="text-2xl font-medium">Rumah</h1>
         </div>
 
         <div
@@ -84,20 +84,20 @@
 
         <div
           class="flex gap-8 kategory items-center p-4  drop-shadow-sm w-full rounded-xl hover:bg-blue-50 ">
-          <img class="h-10" src="../../icon/Kategory/carbon_vehicle-services.png" alt="" />
-          <h1 class="text-2xl font-medium">Bengkel</h1>
+          <img class="h-10" src="../../icon/Kategory/Frame 597.png" alt="" />
+          <h1 class="text-2xl font-medium">Kesehatan</h1>
         </div>
 
         <div
           class="flex gap-8 kategory items-center p-4  drop-shadow-sm w-full rounded-xl hover:bg-blue-50 ">
-          <img class="h-10" src="../../icon/Kategory/carbon_vehicle-services.png" alt="" />
-          <h1 class="text-2xl font-medium">Bengkel</h1>
+          <img class="h-10" src="../../icon/Kategory/mingcute_broom-line.png" alt="" />
+          <h1 class="text-2xl font-medium">Kebersihan</h1>
         </div>
 
         <div
           class="flex gap-8 kategory items-center p-4  drop-shadow-sm w-full rounded-xl hover:bg-blue-50 ">
-          <img class="h-10" src="../../icon/Kategory/carbon_vehicle-services.png" alt="" />
-          <h1 class="text-2xl font-medium">Bengkel</h1>
+          <img class="h-10" src="../../icon/Kategory/mdi_excavator.png" alt="" />
+          <h1 class="text-2xl font-medium">Alat Berat</h1>
         </div>
       </div>
     </div>

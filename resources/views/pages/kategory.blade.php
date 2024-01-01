@@ -7,24 +7,24 @@
     <div class="grid gap-8 grid-cols-4">
       <div class="border rounded-xl py-6 px-10 flex flex-col gap-4 col-span-1">
         <div class="grid gap-2">
-          <h1 class="text-base font-medium">BENGKEL</h1>
+          <h1 class="text-base font-medium">WELL-COM</h1>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Mobil</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Komputer</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Motor</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Laptop</label>
           </div>
           <div class="flex items-center">
             <input id="vue-checkbox" type="checkbox" value=""
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-700 dark:focus:ring-offset-gray-700 focus:ring-2 dark:bg-gray-600 dark:border-gray-500">
             <label for="vue-checkbox"
-              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">Speda</label>
+              class="w-full py-1 ms-2 text-sm font-medium text-gray-900 dark:text-gray-300">HP</label>
           </div>
         </div>
 
