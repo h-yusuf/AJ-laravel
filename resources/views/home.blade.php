@@ -155,11 +155,6 @@
 
   @if($message = Session::get('succes'))
   <script>
-//     Swal.fire({
-//   icon: "success",
-//   title: "Horeee",
-//   text: "{{ $message }}",
-// });
   Swal.fire({
     icon: "success",
     title: "Login Success",

@@ -16,9 +16,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::middleware('guest')->group(function () {
+    Route::get('register', [ProfileController::class, 'create'])
+                ->name('register');
+
+    Route::post('register', [ProfileController::class, 'register']);
+
+    Route::get('login', [ProfileController::class, 'create'])
+                ->name('login');
+
+    Route::post('login', [ProfileController::class, 'login']);
+
+});
+
 Route::get('/', function () {
     return view('index');
 })->middleware(['guest'])->name('index');
+
 
 Route::get('/home', function () {
     return view('home');
@@ -41,9 +55,19 @@ Route::middleware('auth')->group(function () {
         return view('pages/pesan');
     });   Route::get('/chat', function () {
         return view('pages/chat');
-    });  
+    });
+
+    // logout
     
-    
+    Route::post('logout', [ProfileController::class, 'logout'])
+    ->name('logout');
+
+    // transaksi route
+
+    Route::get('/transaksi', [BuatPesanan::class, 'showItem'])->name('showItem');
+    Route::post('/simpanData', [BuatPesanan::class, 'simpanData'])->name('simpanData');
+    Route::post('/deleteItem', [BuatPesanan::class, 'deleteItem'])->name('deleteItem');
+    Route::post('/tambahItem', [BuatPesanan::class, 'tambahItem'])->name('tambahItem');
 });
 
 require __DIR__.'/auth.php';
