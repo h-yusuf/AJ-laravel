@@ -1,7 +1,8 @@
 <?php
 
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\BuatPesanan;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Http\Request;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,74 +15,35 @@ use Illuminate\Http\Request;
 |
 */
 
+
 Route::get('/', function () {
     return view('index');
-});
+})->middleware(['guest'])->name('index');
 
 Route::get('/home', function () {
     return view('home');
-});
+})->middleware(['auth', 'verified'])->name('home');
 
-Route::get('/other', function () {
-    return 'Halaman About';
-});
+Route::middleware('auth')->group(function () { 
 
-Route::get('/kategory', function () {
-    return view('pages/kategory');
-});
+    // page route
 
-Route::get('/detailjasa', function () {
-    return view('pages/detailjasa');
-});
-
-Route::get('/pesan', function () {
-    return view('pages/pesan');
-});
-
-Route::get('/chat', function () {
-    return view('pages/chat');
-});
-Route::get('/test', function () {
-    return view('example/example');
-});
-Route::get('/transaksi', function () {
-    return view('pages/transaksi');
-});
-
-use App\Http\Controllers\LoginController;
-use App\Http\Controllers\homeController;
-use App\Http\Controllers\BuatPesanan;
-
-Route::get('/login', [LoginController::class, 'index'])->name('login_i');
-
-
-Route::post('/login', [LoginController::class, 'login'])->name('login');
-
-Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
-
-Route::post('/register', [LoginController::class, 'register'])->name('register');
-
-Route::group(['prefix' => 'admin', 'middleware' => ['auth'], 'as' => 'admin.'], function () {
+    Route::get('/transaksi', function () {
+        return view('/pages/transaksi');
+    });  
+    Route::get('/kategory', function () {
+        return view('pages/kategory');
+    }); 
+    Route::get('/detailjasa', function () {
+        return view('pages/detailjasa');
+    });   
+    Route::get('/pesan', function () {
+        return view('pages/pesan');
+    });   Route::get('/chat', function () {
+        return view('pages/chat');
+    });  
     
     
 });
 
-
-Route::get('/home', [homeController::class, 'home'])->name('home');
-// Route::group(['prefix' => 'admin', 'middleware' => ['auth', 'admin.auth'], 'as' => 'admin.'], function () {
-//     Route::get('/home', [homeController::class, 'home'])->name('home');
-// });
-Route::get('/transaksi', [BuatPesanan::class, 'showItem'])->name('showItem');
-
-
-Route::post('/simpanData', [BuatPesanan::class, 'simpanData'])->name('simpanData');
-
-Route::post('/deleteItem', [BuatPesanan::class, 'deleteItem'])->name('deleteItem');
-
-Route::post('/tambahItem', [BuatPesanan::class, 'tambahItem'])->name('tambahItem');
-
-Route::post('/process', function (Request $request) {
-    $selectedValue = $request->input('optradio');
-    // dd($selectedValue);
-    return "Selected Value: $selectedValue";
-})->name('process');
+require __DIR__.'/auth.php';

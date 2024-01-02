@@ -28,7 +28,7 @@
 			 >
 			   Contact 
 			 </h2>
-			 <ul class="text-gray-500 dark:text-gray-400 font-medium">
+			 <ul class="text-gray-500 font-medium">
 			   <li class="mb-4">
 				 <a href="" class="hover:underline"
 				   >WhatsApp</a
@@ -47,7 +47,7 @@
 			 >
 			   Follow us
 			 </h2>
-			 <ul class="text-gray-500 dark:text-gray-400 font-medium">
+			 <ul class="text-gray-500 font-medium">
 			   <li class="mb-4">
 				 <a
 				   href="https://github.com/h-yusuf"
@@ -70,7 +70,7 @@
 			 >
 			   Legal
 			 </h2>
-			 <ul class="text-gray-500 dark:text-gray-400 font-medium">
+			 <ul class="text-gray-500 font-medium">
 			   <li class="mb-4">
 				 <a href="#" class="hover:underline">Privacy Policy</a>
 			   </li>
@@ -85,7 +85,7 @@
 		 class="my-6 border-gray-200 sm:mx-auto lg:my-8"
 	   />
 	   <div class="sm:flex sm:items-center sm:justify-between">
-		 <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400"
+		 <span class="text-sm text-gray-500 sm:text-center"
 		   >© 2023
 		   <a href="https://flowbite.com/" class="hover:underline">AdaJasa™</a
 		   >. All Rights Reserved.
@@ -93,7 +93,7 @@
 		 <div class="flex mt-4 sm:justify-center sm:mt-0">
 		   <a
 			 href="#"
-			 class="text-gray-500 hover:text-gray-900 dark:hover:text-white"
+			 class="text-gray-500 hover:text-gray-900"
 		   >
 			 <svg
 			   class="w-4 h-4"
@@ -112,7 +112,7 @@
 		   </a>
 		   <a
 			 href="#"
-			 class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+			 class="text-gray-500 hover:text-gray-900 ms-5"
 		   >
 			 <svg
 			   class="w-4 h-4"
@@ -129,7 +129,7 @@
 		   </a>
 		   <a
 			 href="#"
-			 class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+			 class="text-gray-500 hover:text-gray-900 ms-5"
 		   >
 			 <svg
 			   class="w-4 h-4"
@@ -148,7 +148,7 @@
 		   </a>
 		   <a
 			 href="#"
-			 class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+			 class="text-gray-500 hover:text-gray-900 ms-5"
 		   >
 			 <svg
 			   class="w-4 h-4"
@@ -167,7 +167,7 @@
 		   </a>
 		   <a
 			 href="#"
-			 class="text-gray-500 hover:text-gray-900 dark:hover:text-white ms-5"
+			 class="text-gray-500 hover:text-gray-900 ms-5"
 		   >
 		   <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 15 15">
 			   <path fill-rule="evenodd" d="M7.979 5v1.586a3.5 3.5 0 0 1 3.082-1.574C14.3 5.012 15 7.03 15 9.655V15h-3v-4.738c0-1.13-.229-2.584-1.995-2.584-1.713 0-2.005 1.23-2.005 2.5V15H5.009V5h2.97ZM3 2.487a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" clip-rule="evenodd"/>

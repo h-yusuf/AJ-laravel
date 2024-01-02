@@ -87,7 +87,7 @@
                     </div>
                     <div id="small" class=" flex gap-2 items-center py-4">
                         <select id="underline_select"
-                            class="block py-2.5 px-3 w-40 text-base text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                            class="block py-2.5 px-3 w-40 text-base text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                             <option class="text-base text-primary w-32" selected>Diskon 20%</option>
                             <option value="Diskon 50%">Diskon 50%</option>
                             <option value="Diskon 10%">Diskon 10%</option>
@@ -110,7 +110,7 @@
                     </div>
                     <div  class=" flex  items-center py-4">
                       <select id="underline_select"
-                          class="block py-2.5 px-3 w-full text-base text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none dark:text-gray-400 dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-200 peer">
+                          class="block py-2.5 px-3 w-full text-base text-gray-500 bg-transparent border-0 border-b-2 border-gray-200 appearance-none focus:outline-none focus:ring-0 focus:border-gray-200 peer">
                           <option class="text-base text-primary " selected>Saldo AdaJasa</option>
                           <option value="Mandiri">Mandiri</option>
                           <option value="BRI">BRI</option>

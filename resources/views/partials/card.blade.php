@@ -1,7 +1,7 @@
 <div class="mt-4 relative overflow-x-auto">
     <div class="w-screen min-w-max flex gap-4">
       <div
-        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
       >
         <a href="#">
           <img
@@ -57,7 +57,7 @@
       </div>
 
       <div
-        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
       >
         <a href="#">
           <img
@@ -113,7 +113,7 @@
       </div>
 
       <div
-        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
       >
         <a href="#">
           <img
@@ -169,7 +169,7 @@
       </div>
 
       <div
-        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
       >
         <a href="#">
           <img
@@ -225,7 +225,7 @@
       </div>
 
       <div
-        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
       >
         <a href="#">
           <img

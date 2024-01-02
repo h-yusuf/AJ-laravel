@@ -11,7 +11,7 @@
 function toggleVisibility() {
     var previewContainer = document.getElementById('preview-container');
     var formContainer = document.getElementById('form-container');
-
+    console.log();
     // Tampilkan preview jika ada data, sembunyikan formulir
     if (previewContainer.style.display === 'none') {
         previewContainer.style.display = 'grid';
