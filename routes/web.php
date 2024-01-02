@@ -16,9 +16,23 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+Route::middleware('guest')->group(function () {
+    Route::get('register', [ProfileController::class, 'create'])
+                ->name('register');
+
+    Route::post('register', [ProfileController::class, 'register']);
+
+    Route::get('login', [ProfileController::class, 'create'])
+                ->name('login');
+
+    Route::post('login', [ProfileController::class, 'login']);
+
+});
+
 Route::get('/', function () {
     return view('index');
 })->middleware(['guest'])->name('index');
+
 
 Route::get('/home', function () {
     return view('home');
@@ -41,13 +55,12 @@ Route::middleware('auth')->group(function () {
         return view('pages/pesan');
     });   Route::get('/chat', function () {
         return view('pages/chat');
-    });  
-    
-    // login route
+    });
 
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    // logout
+    
+    Route::post('logout', [ProfileController::class, 'logout'])
+    ->name('logout');
 
     // transaksi route
 
