@@ -47,6 +47,9 @@ Route::get('/test', function () {
 Route::get('/transaksi', function () {
     return view('pages/transaksi');
 });
+Route::get('/editpesan', function () {
+    return view('pages/editpesan');
+});
 
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\homeController;
@@ -85,3 +88,7 @@ Route::post('/process', function (Request $request) {
     // dd($selectedValue);
     return "Selected Value: $selectedValue";
 })->name('process');
+
+Route::get('/editPesanan', [BuatPesanan::class,'editPesanan'])->name('editPesanan');
+    
+Route::put('/updateAlamat', [BuatPesanan::class, 'updateAlamat'])->name('updateAlamat');

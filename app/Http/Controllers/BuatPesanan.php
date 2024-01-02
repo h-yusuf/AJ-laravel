@@ -53,4 +53,30 @@ class BuatPesanan extends Controller
         return redirect()->route('showItem')->with('success', 'Item has been deleted successfully.');
     }
 
+    public function editPesanan($id)
+    {
+        $pesanan = Keranjang::findOrFail($id);
+
+        return view('/pages/editpesan', ['pesanan' => $pesanan]);
+    }
+
+    public function updateAlamat(Request $request, $id)
+    {
+        // Validasi data yang diterima dari formulir
+        $request->validate([
+            'alamat' => 'required|string|max:255',
+            // Sesuaikan dengan aturan validasi lainnya
+        ]);
+
+        // Memperbarui alamat dalam tabel 'keranjang' berdasarkan ID
+        Keranjang::where('id', $id)
+            ->update(['alamat' => $request->input('alamat')]);
+
+        // Redirect atau tampilkan pesan sukses
+        return redirect()->route('rute_yang_diinginkan')
+            ->with('success', 'Alamat pesanan berhasil diperbarui.');
+    }
+
+
+
 }

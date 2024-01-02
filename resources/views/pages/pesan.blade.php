@@ -10,7 +10,7 @@
                 <div class="">
                     <div class="w-full border rounded-lg p-4 flex justify-between  items-center bg-primary bg-opacity-5">
                         <div class="flex gap-6">
-                            <img class="rounded-md w-24 h-24" src="../../asset/kategory.png" alt="">
+                            <img class="rounded-md w-24 h-24" src="../../asset/laptop.png" alt="">
                             <div class="">
                                 <h2 class="font-semibold text-xl"> {{ $data['layanan_utama'] }}</h2>
                                 <h2>{{ $data['layanan_tambahan'] }}</h2>
@@ -53,7 +53,10 @@
                     <h3 class=" text-base leading-4 text-primary">
                         {{ $data['alamat'] }}
                     </h3> </div>
-                    <button  class="text-third underline">edit</button>
+                    <!-- Contoh tautan edit -->
+                    <a href="{{ route('editPesanan') }} "  class="text-third underline">edit</a>
+
+                    
                 </div>
 
             </div>

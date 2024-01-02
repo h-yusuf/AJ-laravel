@@ -34,10 +34,10 @@
                     <div class="grid gap-8" id="preview-container">
                         <div class="flex justify-between">
                             <div class="flex items-center gap-8">
-                                <img src="asset/warung.png" width="40">
+                                <img src="asset/laptop.png" width="40">
                                 <div class="w-35"><span class="font-semibold">
-                                        Barokah Service </span>
-                                    <p class="text-sm text-gray-400">Service</p>
+                                        Well-Comp </span>
+                                    <p class="text-sm text-gray-400">Teknologi</p>
                                 </div>
                                 <img src="asset/bx_chat.png" width="30" class="-mt-2">
                             </div>
@@ -67,7 +67,7 @@
                         <div class="flex justify-between items-center">
                             <div class="flex items-start ">
                                 <div class="flex gap-5">
-                                    <img src="asset/Rectangle 542.png" width="60">
+                                    <img src="asset/laptop.png" width="60">
                                     <div class="w-40">
                                         <span class="font-semibold">{{ $item->layanan_utama }}
                                         </span>
