@@ -37,7 +37,7 @@
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
 
                                 <div class="flex gap-6">
-                                    <img class="rounded-md w-24 h-24" src="asset/kategory.png" alt="">
+                                    <img class="rounded-md w-24 h-24" src="asset/komputer.png" alt="">
                                     <div class=" ">
                                         <h2 class="font-semibold text-xl">Service komputer</h2>
                                         <h2>Normal</h2>
@@ -53,7 +53,7 @@
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
 
                                 <div class="flex gap-6">
-                                    <img class="rounded-md w-24 h-24" src="asset/kategory.png" alt="">
+                                    <img class="rounded-md w-24 h-24" src="asset/laptop.png" alt="">
                                     <div class="">
                                         <h2 class="font-semibold text-xl">Service Laptop</h2>
                                         <h2>Normal</h2>
@@ -73,7 +73,7 @@
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
 
                                 <div class="flex gap-6">
-                                    <img class="rounded-md w-24 h-24" src="asset/kategory.png" alt="">
+                                    <img class="rounded-md w-24 h-24" src="asset/fast.png" alt="">
                                     <div class=" ">
                                         <h2 class="font-semibold text-xl">Service Fast</h2>
                                         <h2>Garansi</h2>
@@ -89,7 +89,7 @@
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
 
                                 <div class="flex gap-6">
-                                    <img class="rounded-md w-24 h-24" src="asset/kategory.png" alt="">
+                                    <img class="rounded-md w-24 h-24" src="asset/slow.png" alt="">
                                     <div class="">
                                         <h2 class="font-semibold text-xl">Service Fast</h2>
                                         <h2>Non-garansi</h2>
