@@ -14,9 +14,12 @@ class BuatPesanan extends Controller
     public function tambahItem(Request $request)
     {
         // $idTransaksi = Keranjang::max('id_transaksi') + 1;
+
         $numericPart = (int)substr(Keranjang::max('id_transaksi'), 1) + 1;
         $idTransaksi = "D" . str_pad($numericPart, 3, '0', STR_PAD_LEFT);
+
         // dd($idTransaksi);
+        
         $data = [
             'id_transaksi' => $idTransaksi,
             'layanan_utama' => $request->input('layananUtama'),
@@ -32,6 +35,14 @@ class BuatPesanan extends Controller
         return view('/pages/pesan', ['data' => $data]);
     }
 
+    // public function editItem(Request $request){
+
+    //     $data =   ['alamat' => $request->input('date_edit')];
+    //     session(['data' => $data]);
+    //     dd($data);
+    //     return view('/pages/pesan', ['data' => $data]);
+
+    // }
     public function simpanData(Request $request)
     {
         $data = $request->except('_token');

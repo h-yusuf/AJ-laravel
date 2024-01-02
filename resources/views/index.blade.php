@@ -63,17 +63,6 @@
           </div>
         </form>
         <div class="flex gap-4 items-center">
-<<<<<<< HEAD
-          <button data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-            class="text-white bg-primary hover:bg-primary focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm py-2 p-0.5 px-5 text-center ">
-            Log in
-          </button>
-          <button data-modal-target="crud-modal" data-modal-toggle="crud-modal"
-            class="relative inline-flex items-center justify-center p-0.5  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-primary   hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-secondary ">
-            <span
-              class="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
-              Sig up
-=======
           <button id="log_in" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
             class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-sm py-2 p-0.5 px-5 text-center ">
             Log in
@@ -83,7 +72,6 @@
             <span
               class="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
               Register
->>>>>>> 39d8e070d9be545c57cbdcab4c72afc20d9e69f6
             </span>
           </button>
         </div>

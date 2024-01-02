@@ -68,6 +68,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/simpanData', [BuatPesanan::class, 'simpanData'])->name('simpanData');
     Route::post('/deleteItem', [BuatPesanan::class, 'deleteItem'])->name('deleteItem');
     Route::post('/tambahItem', [BuatPesanan::class, 'tambahItem'])->name('tambahItem');
+    Route::post('/editItem', [BuatPesanan::class, 'editItem'])->name('editItem');
 });
 
 require __DIR__.'/auth.php';
