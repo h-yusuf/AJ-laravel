@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Hash;
 class loginController extends Controller
 {
     protected $userModel;
-
+    
     public function __construct()
     {
         $this->userModel = new User();

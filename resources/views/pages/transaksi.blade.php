@@ -34,7 +34,7 @@
                     <div class="grid gap-8" id="preview-container">
                         <div class="flex justify-between">
                             <div class="flex items-center gap-8">
-                                <img src="asset/laptop.png" width="40">
+                                <img src="asset/warung.png" width="40">
                                 <div class="w-35"><span class="font-semibold">
                                         Well-Comp </span>
                                     <p class="text-sm text-gray-400">Teknologi</p>
@@ -100,4 +100,14 @@
             </div>
         </div>
     </div>
+
+@if($message = Session::get('succes'))
+<script>
+    Swal.fire({
+  icon: "success",
+  title: "yeay",
+  text: "{{ $message }}",
+});
+</script>
+@endif
 @endsection

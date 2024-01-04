@@ -53,7 +53,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Delete the user's account.
+     * login user's account.
      */
     public function login(LoginRequest $request): RedirectResponse
     {
@@ -65,14 +65,14 @@ class ProfileController extends Controller
     }
 
     /**
-     * Destroy an authenticated session.
+     * logout an authenticated session.
      */
+
     public function logout(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
 
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
 
         return redirect('/')->with('logout', 'youre account has logout');

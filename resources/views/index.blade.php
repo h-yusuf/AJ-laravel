@@ -64,11 +64,11 @@
         </form>
         <div class="flex gap-4 items-center">
           <button id="log_in" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal"
-            class="text-white bg-gradient-to-br from-green-400 to-blue-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-sm py-2 p-0.5 px-5 text-center ">
+            class="text-white bg-primary  hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-green-200 font-medium rounded-lg text-sm py-2 p-0.5 px-5 text-center ">
             Log in
           </button>
           <button id="reg" data-modal-target="register" data-modal-toggle="register"
-            class="relative inline-flex items-center justify-center p-0.5  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-green-400 to-blue-600 group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200">
+            class="relative inline-flex items-center justify-center p-0.5  overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-primary  group-hover:from-green-400 group-hover:to-blue-600 hover:text-white focus:ring-4 focus:outline-none focus:ring-green-200">
             <span
               class="relative px-5 py-1.5 transition-all ease-in duration-75 bg-white rounded-md group-hover:bg-opacity-0">
               Register
