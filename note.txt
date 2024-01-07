@@ -1,0 +1,2 @@
+ALTER TABLE jasa modify column id_jasa varchar(20);
+ALTER TABLE keranjang modify column id_transaksi varchar(20);

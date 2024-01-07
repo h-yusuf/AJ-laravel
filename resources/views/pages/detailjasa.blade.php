@@ -4,7 +4,8 @@
     <div class="px-32">
         <div class="my-12">
             <div class="rounded-md border  p-8 py-12 grid gap-4 ">
-                
+                @forelse ($jasa as $item)
+                    {{-- @dd($item); --}}
                 <form action="{{ route('tambahItem') }}" method="POST" class="grid mx-12 gap-4 ">
                     @csrf
                     <h1 class="text-xl font-semibold text-center ">Detail Jasa</h1>
@@ -12,10 +13,10 @@
 
                         <div class="w-1/3 border rounded-lg p-4 flex justify-between  items-center bg-primary bg-opacity-5">
                             <div class="flex gap-6 items-center">
-                                <img class="rounded-full w-24 h-24" src="asset/account/p4.png" alt="">
+                                <img class="rounded-full w-24 h-24" src="{{ $item->img_jasa }}" alt="">
                                 <div class="">
-                                    <h2 class="font-semibold text-xl">Well-Comp</h2>
-                                    <h2 class="text-gray-400 font-semibold">Computer</h2>
+                                    <h2 class="font-semibold text-xl"> {{ $item->product_name }} </h2>
+                                    <h2 class="text-gray-400 font-semibold"> {{ $item->categories }} </h2>
                                 </div>
                             </div>
 
@@ -30,24 +31,33 @@
                         </p>
                     </div>
                     <h2 class="text-lg">Layanan Utama</h2>
-                    <div class="flex gap-4 btn-group text-black">
-                        <label
-                            class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
-                            <input type="radio" value="Service komputer" name="layananUtama">
-                            <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
-
-                                <div class="flex gap-6">
-                                    <img class="rounded-md w-24 h-24" src="asset/komputer.png" alt="">
-                                    <div class=" ">
-                                        <h2 class="font-semibold text-xl">Service komputer</h2>
-                                        <h2>Normal</h2>
-                                        <h3>Rp 120.000</h3>
+                    <div class="flex gap-4 btn-group text-black" >
+                        {{-- @dd($item); --}}
+                            @foreach ($jasa as $items)
+                                
+                            <label
+                                class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
+                                <input type="radio" value="{{ $items->layananUtama->id_LU }}" name="layananUtama">
+                                <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
+                                   
+                                    
+                                    <div class="flex gap-6">
+                                        <img class="rounded-md w-24 h-24" src="{{ $items->layananUtama->imgLU }}" alt="">
+                                        {{-- @dd($items->layananUtama->imgLU); --}}
+                                        <div class=" ">
+                                            <h2 class="font-semibold text-xl">{{ $items->layananUtama->nameLU }}</h2>
+                                            <h2>{{ $items->layananUtama->desk }}</h2>
+                                            <h3>Rp {{ $items->layananUtama->price }}</h3>
+                                        </div>
                                     </div>
-                                </div>
-                            </span>
+                                </span>
+    
+                            </label>
+                            @endforeach
 
-                        </label>
-                        <label
+                      
+
+                        {{-- <label
                             class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
                             <input type="radio" value="Service Laptop" name="layananUtama">
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
@@ -62,28 +72,37 @@
                                 </div>
                             </span>
 
-                        </label>
+                        </label> --}}
                     </div>
 
                     <h2 class="text-lg">Layanan Tambahan</h2>
                     <div class="flex gap-4 btn-group">
-                        <label
-                            class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
-                            <input type="radio" value="Fast Service Garansi" name="layananTambahan">
-                            <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
 
-                                <div class="flex gap-6">
-                                    <img class="rounded-md w-24 h-24" src="asset/fast.png" alt="">
-                                    <div class=" ">
-                                        <h2 class="font-semibold text-xl">Service Fast</h2>
-                                        <h2>Garansi</h2>
-                                        <h3>Rp 150.000</h3>
-                                    </div>
+                        <input type="hidden" name="idJasa" value="{{ $item->idJasa }}">
+                        @foreach ($jasa as $items)
+
+                        <label
+                        class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
+                        <input type="radio" value="{{ $items->layananTambahan->id_LT }}" name="layananTambahan">
+                        <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
+                           
+                            
+                            <div class="flex gap-6">
+                                <img class="rounded-md w-24 h-24" src="{{ $items->layananTambahan->imgLT }}" alt="">
+                                {{-- @dd($items->layananTambahan->imgLU); --}}
+                                <div class=" ">
+                                    <h2 class="font-semibold text-xl">{{ $items->layananTambahan->nameLT }}</h2>
+                                    <h2>{{ $items->layananTambahan->desk }}</h2>
+                                    <h3>Rp {{ $items->layananTambahan->price }}</h3>
                                 </div>
-                            </span>
+                            </div>
+                        </span>
 
-                        </label>
-                        <label
+                    </label>
+
+                        @endforeach
+
+                        {{-- <label
                             class="option w-full border border-primary rounded-lg flex justify-between items-center bg-primary bg-opacity-10 text-black">
                             <input type="radio" value="Fast Service" name="layananTambahan">
                             <span class="btn-option w-full p-4 rounded-lg bg-opacity-10 ">
@@ -98,7 +117,7 @@
                                 </div>
                             </span>
 
-                        </label>
+                        </label> --}}
                     </div>
 
                     <!-- datete time -->
@@ -220,6 +239,9 @@
                         </button>
                     </div>
                 </form>
+                @empty
+                    
+                @endforelse
             </div>
 
         </div>

@@ -378,20 +378,21 @@
   
       <div class="mt-4 relative overflow-x-hidden">
         <div class="w-screen min-w-max flex gap-4">
+          {{-- @foreach ($dataKeranjang as $item) --}}
           <div
             class="max-w-sm bg-white border border-gray-200 rounded-lg shadow"
           >
             <a href="#">
               <img
                 class="rounded-t-lg w-full"
-                src="asset/bengkel2.png"
+                src="asset/jasa/bengkel.png"
                 alt=""
               />
             </a>
             <div class="p-4 pt-3">
               <a href="#">
                 <h5 class="text-lgS font-medium tracking-tight text-primary">
-                  Bengkel Maju Makmur
+                  {{-- {{$item->layanan_utama }} --}}
                 </h5>
               </a>
               <h5 class="text-gray-500">Bengkel</h5>
@@ -434,13 +435,14 @@
             </div>
           </div>
   
+          {{-- @endforeach --}}
           <div
             class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
             <a href="#">
               <img
                 class="rounded-t-lg w-full"
-                src="asset/klinikoke.png"
+                src="asset/jasa/klinikoke.png"
                 alt=""
               />
             </a>
@@ -496,7 +498,7 @@
             <a href="#">
               <img
                 class="rounded-t-lg w-full"
-                src="asset/beautyhouse.png"
+                src="asset/jasa/beautyhouse.png"
                 alt=""
               />
             </a>
@@ -552,7 +554,7 @@
             <a href="#">
               <img
                 class="rounded-t-lg w-full"
-                src="asset/IT.png"
+                src="asset/jasa/IT.png"
                 alt=""
               />
             </a>
@@ -608,7 +610,7 @@
             <a href="#">
               <img
                 class="rounded-t-lg w-full"
-                src="asset/kategory.png"
+                src="asset/jasa/kategory.png"
                 alt=""
               />
             </a>
@@ -664,7 +666,7 @@
             <a href="#">
               <img
                 class="rounded-t-lg w-full"
-                src="asset/kategory.png"
+                src="asset/jasa/mebel.png"
                 alt=""
               />
             </a>
@@ -720,7 +722,7 @@
             <a href="#">
               <img
                 class="rounded-t-lg w-full"
-                src="asset/kategory.png"
+                src="asset/jasa/mebel.png"
                 alt=""
               />
             </a>

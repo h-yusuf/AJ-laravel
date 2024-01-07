@@ -61,6 +61,11 @@ class ProfileController extends Controller
 
         $request->session()->regenerate();
 
+        if ($request->input('email') == 'iyadeh37@gmail.com') {
+            
+            return redirect()->route('showJasa')->with('success', 'Login admin has successfully');
+        }
+
         return redirect()->route('home')->with('succes','Login successfuly');
     }
 

@@ -82,4 +82,21 @@ class LoginController extends Controller
 //             return redirect()->route('/home'); // Sesuaikan dengan nama route produk
 //         }
 //     }
+// public function login(Request $request)
+// {
+//     $request->validate([ 
+//         'login' => 'required', 
+//         'password' => 'required'
+//     ]); 
+
+//     dd('$request');
+
+//     if(Auth::attempt($request->only('login', 'password'))){ 
+//         return redirect('admin.home'); 
+//     } 
+
+//     // return back()->withInput()->withErrors([ 
+//     //     'login' => 'wrong login' 
+//     // ]); 
+// }
 }
