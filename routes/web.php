@@ -37,13 +37,11 @@ Route::get('/', function () {
     return view('index');
 })->middleware(['guest'])->name('index');
 
-
 Route::get('/home', function () {
     $datajasa = jasa::select('*')
     ->get();
     return view('home', ['datajasa' => $datajasa]);
 })->middleware(['auth', 'verified'])->name('home');
-
 
 Route::get('/test', function () {
 
@@ -51,11 +49,6 @@ Route::get('/test', function () {
     ->get();
     return view('example.card', ['datajasa' => $datajasa]);
 });
-
-    Route::get('/product-login', function () {
-
-        return view('admin/product');
-    })->middleware(['auth', 'verified'])->name('home');  
 
 Route::middleware('auth')->group(function () { 
 
@@ -67,9 +60,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/user', function () {
         return view('/admin/users');
     });  
-    // Route::get('/product-login', function () {
+    // Route::get('/update', function () {
 
-    //     return view('/admin/product');
+    //     return view('admin/update');
     // });  
     Route::get('/kategory', function () {
         $datajasa = jasa::select('*')
@@ -96,9 +89,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/showCard', [showdata::class, 'showCard'])->name('showCard');
     Route::post('/deleteJasa', [adminController::class, 'deleteJasa'])->name('deleteJasa');
     Route::post('/tambahJasa', [adminController::class, 'tambahJasa'])->name('tambahJasa');
-    // Route::put('/updateJasa',  [adminController::class, 'updateJasa'])->name('updateJasa');
-    Route::put('/product',  [adminController::class, 'updateJasa'])->name('updateJasa');
-
+    Route::put('/update{idJasa}',  [adminController::class, 'update'])->name('update');
+    Route::get('/editJasa{idJasa}', [adminController::class, 'editJasa'])->name('editJasa');
+    
     // transaksi route
 
     Route::post('/sesionJasa', [BuatPesanan::class, 'sesionJasa'])->name('sesionJasa');

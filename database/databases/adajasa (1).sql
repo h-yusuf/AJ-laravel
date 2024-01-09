@@ -70,7 +70,7 @@ INSERT INTO `jasa` (`idJasa`, `img_jasa`, `product_name`, `categories`, `id_LU`,
 -- Struktur dari tabel `layanan_tambahan`
 --
 
-CREATE TABLE `layanan_tambahan` (
+CREATE TABLE `layanan_tambahan` (                                                               
   `id_LT` int(20) NOT NULL,
   `imgLT` varchar(255) NOT NULL,
   `nameLT` varchar(255) NOT NULL,

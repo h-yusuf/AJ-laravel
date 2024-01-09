@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Models\jasa;
+use App\Models\layanan_tambahan;
+use App\Models\layanan_utama;
 use Illuminate\Http\Request;
+
 
 class adminController extends Controller
 {
@@ -14,13 +17,10 @@ class adminController extends Controller
     public function tambahJasa(Request $request)
     {
         $idJasa = jasa::max('idJasa') + 1;
-
         // dd('dsa');
         // $numericPart = (int)substr(jasa::max('id_jasa'), 1) + 1;
         // $idJasa = "J" . str_pad($numericPart, 3, '0', STR_PAD_LEFT);
-
         // dd($idJasa);
-        
         $data = [
             'idJasa' => $idJasa,
             'img_jasa' => $request->input('productImg'),
@@ -29,36 +29,26 @@ class adminController extends Controller
             'id_LU' => $request->input('utama'),
             'id_LT' => $request->input('tambahan'),
             'location' => $request->input('lokasi'),
-            
+
         ];
 
         jasa::create($data);
         // dd($data);
-        return redirect()->route('showJasa');    
+        return redirect()->route('showJasa');
     }
 
-    public function editJasa(Request $request)
-{
-    // Ambil data jasa berdasarkan ID
-    $itemID = $request->input('item_id_edit');
+    // edit out popup
 
-    dd($itemID);
-    // Tampilkan halaman edit dengan membawa data jasa
-    return redirect()->route('updateJasa',$itemID);
-}
-    public function updateJasa(Request $request, $idJasa ){
-
-        $request->validate([
-            'productImg' => 'required',
-            'productName' => 'required',
-            'kategory' => 'required',
-            'utama' => 'required',
-            'tambahan' => 'required',
-            'lokasi' => 'required',
-        ]);
-
+    public function editJasa(string $idJasa)
+    {
         $jasa = jasa::findOrFail($idJasa);
+        // dd($jasa);
+        return view('admin.update', compact('jasa'));
 
+    }
+    public function update(Request $request, string $idJasa)
+    {
+        $jasa = jasa::findOrFail($idJasa);
         $jasa->update([
             'img_jasa' => $request->input('productImg'),
             'product_name' => $request->input('productName'),
@@ -67,13 +57,25 @@ class adminController extends Controller
             'id_LT' => $request->input('tambahan'),
             'location' => $request->input('lokasi'),
         ]);
-        return redirect()->route('showJasa')->with('success', 'Jasa berhasil diupdate.');
+        // dd($jasa);
+
+        return redirect()->route('showJasa');
     }
+
     public function showJasa()
     {
         $datajasa = Jasa::with('layananUtama', 'layananTambahan')->get();
+        $dataLU = layanan_utama::all();
+        $dataLT = layanan_tambahan::all();
         // dd($datajasa);
-        return view('admin.product', ['datajasa' => $datajasa]);
+
+        return view('admin.product', [
+            'datajasa' => $datajasa
+            ,
+            'dataLU' => $dataLU
+            ,
+            'dataLT' => $dataLT
+        ]);
     }
 
     public function deleteJasa(Request $request)

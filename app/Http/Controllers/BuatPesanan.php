@@ -7,7 +7,8 @@ use App\Models\layanan_tambahan;
 use App\Models\layanan_utama;
 use Illuminate\Http\Request;
 use App\Models\Transaksi;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+
 
 class BuatPesanan extends Controller
 {
@@ -50,11 +51,14 @@ class BuatPesanan extends Controller
             'layUt' => $layUt,
             'layTb' => $layTb,
         ];
+
         // dd($combinedResults);
 
-
+        $id_user = Auth::user()->id;
+        // dd($artikels);
         $data = [
             'id_transaksi' => $idTransaksi,
+            'id_user' => $id_user,
             'idJasa' => $request->input('idJasa'),
             'layanan_utama' => $layananUtama,
             'layanan_tambahan' => $layananTambahan,
@@ -65,61 +69,32 @@ class BuatPesanan extends Controller
             'note' => $request->input('note'),
             'price' => $totalPrice,
         ];
-        // dd($data);
+        // dd($data);  
         session(['data' => $data, 'combinedResults' => $combinedResults, 'totalPrice' => $totalPrice]);
         // dd($data);
-        // dd($data,$combinedResults);
         return view('pages/pesan', ['data' => $data, 'combinedResults' => $combinedResults, 'totalPrice' => $totalPrice]);
     }
 
+    
     public function simpanData(Request $request)
     {
 
         $data = $request->except('_token');
-        // $data['price'] = $request->input('price');
-        // $layananUtama = $data['layanan_utama'];
-        // dd($data);
+
         Transaksi::create($data);
         return redirect()->route('showItem');
-
-        // return redirect()->route('showItem');
-
     }
 
     public function showItem(Request $request)
     {
-
-
-        // $dataTransaksi = Transaksi::all();
         $dataTransaksi = Transaksi::with('jasa','jasa.layananUtama', 'jasa.layananTambahan')->get();
-
-        // $jasa = $dataTransaksi[1]->layanan_utama ?? 'Nilai Default';
-
-        // // dd($jasa);
-        // // $jasa = [];
-
-        // foreach ($dataTransaksi as $transaksi) {
-        //     // Ambil layanan utama dari setiap objek Transaksi
-        //     $layananUtama = $transaksi;
-
-        //     // Sekarang $layananUtama berisi data layanan utama dari setiap transaksi
-        //     // Lakukan sesuatu dengan $layananUtama, misalnya mencetaknya
-        //     echo "Layanan Utama: " . $transaksi->layanan_utama . "<br>";
-        // }
-
-        // $dataLayananUtama sekarang berisi data layanan utama dari setiap objek Transaksi
-        // dd($dataLayananUtama);
-
-
-        // dd($dataTransaksi);
-
-        // $jasa = jasa::with('layananUtama', 'layananTambahan')->get();
 
         return view('/pages/transaksi', [
             'dataTransaksi' => $dataTransaksi,
-            // 'jasa' => $jasa,
+
         ]);
     }
+    
 
     public function deleteItem(Request $request)
     {
@@ -128,6 +103,8 @@ class BuatPesanan extends Controller
         Transaksi::where('id_transaksi', $itemID)->delete();
         return redirect()->route('showItem')->with('success', 'Item has been deleted successfully.');
     }
+
+    
 
 
 }

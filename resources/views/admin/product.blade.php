@@ -96,8 +96,7 @@
                                 clip-rule="evenodd"></path>
                         </svg>
                     </button>
-                    <a href="home"
-                        class="text-md font-semibold flex items-center ">
+                    <a href="home" class="text-md font-semibold flex items-center ">
                         <img src="/icon/Ada jasa blue.png" class="mr-4 h-8" style="margin-left: 30px">
                         <span
                             class="hidden md:inline-block  self-center font-semibold text-base whitespace-nowrap">Admin
@@ -382,7 +381,7 @@
                                                     type="button">
                                                     add item
                                                 </button>
-
+                                                {{-- @dd($datajasa); --}}
                                                 <!-- Main modal -->
                                                 <div id="crud-modal" tabindex="-1" aria-hidden="true"
                                                     class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -431,16 +430,30 @@
                                                                         <div class="col-span-6 sm:col-span-3">
                                                                             <label for="brand"
                                                                                 class="block mb-2 text-sm font-medium text-gray-900">id_utama</label>
-                                                                            <input type="number" name="utama"
+                                                                            <select name="utama"
                                                                                 class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
-                                                                                placeholder="" required>
+                                                                                id="">
+                                                                                @foreach ($dataLU as $item)
+                                                                                    <option
+                                                                                        value="{{ $item->id_LU }}">
+                                                                                        {{ $item->nameLU }} </option>
+                                                                                @endforeach
+                                                                            </select>
+
                                                                         </div>
                                                                         <div class="col-span-6 sm:col-span-3">
                                                                             <label for="price"
                                                                                 class="block mb-2 text-sm font-medium text-gray-900">id_tambahan</label>
-                                                                            <input type="number" name="tambahan"
+                                                                            <select name="tambahan"
                                                                                 class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
-                                                                                placeholder="" required>
+                                                                                id="">
+
+                                                                                @foreach ($dataLT as $item)
+                                                                                    <option
+                                                                                        value="{{ $item->id_LT }}">
+                                                                                        {{ $item->nameLT }} </option>
+                                                                                @endforeach
+                                                                            </select>
                                                                         </div>
                                                                         <div class="col-span-full">
                                                                             <label for="product-details"
@@ -532,23 +545,25 @@
                                                     class="p-4 text-base font-medium text-gray-900 whitespace-nowrap lg:p-5">
                                                     {{ $item->layananTambahan->nameLT }}</td>
                                                 <td class="p-4 space-x-2 whitespace-nowrap lg:p-5">
-                                                    <form class="inline-flex items-center"
-                                                     action="" method="POST">
-                                                        <button type="button" data-modal-toggle="product-modal"
-                                                            class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 hover:text-gray-900 hover:scale-[1.02] transition-all">
-                                                            <input type="hidden" name="item_id_edit" value="{{ $item->idJasa }}">
-                                                            <svg class="mr-2 w-5 h-5" fill="currentColor"
-                                                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                                <path
-                                                                    d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z">
-                                                                </path>
-                                                                <path fill-rule="evenodd"
-                                                                    d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
-                                                                    clip-rule="evenodd"></path>
-                                                            </svg>
-                                                            Edit item
-                                                        </button>
-                                                    </form>
+                                                    {{-- href="{{ route('editJasa', $item->idJasa) }}"  --}}
+                                                    {{-- type="button" data-modal-toggle="product-modal-{{ $item->idJasa }}" --}}
+                                                    <button type="button"
+                                                        data-modal-toggle="product-modal-{{ $item->idJasa }}"
+                                                        class="inline-flex items-center py-2 px-3 text-sm font-medium text-center text-gray-700 bg-gray-200 rounded-lg hover:bg-gray-300 hover:text-gray-900 hover:scale-[1.02] transition-all">
+                                                        <input type="hidden" name="item_id_edit"
+                                                            value="{{ $item->idJasa }}">
+                                                        <svg class="mr-2 w-5 h-5" fill="currentColor"
+                                                            viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                                            <path
+                                                                d="M17.414 2.586a2 2 0 00-2.828 0L7 10.172V13h2.828l7.586-7.586a2 2 0 000-2.828z">
+                                                            </path>
+                                                            <path fill-rule="evenodd"
+                                                                d="M2 6a2 2 0 012-2h4a1 1 0 010 2H4v10h10v-4a1 1 0 112 0v4a2 2 0 01-2 2H4a2 2 0 01-2-2V6z"
+                                                                clip-rule="evenodd"></path>
+                                                        </svg>
+                                                        Edit item
+                                                    </button>
+
                                                     <form class="inline-flex items-center"
                                                         action="{{ route('deleteJasa') }}" method="POST">
                                                         @csrf
@@ -627,109 +642,133 @@
                 </div>
 
                 <!-- Main modal -->
-                <div id="product-modal" tabindex="-1" aria-hidden="true"
-                    class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                    <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
+                @foreach ($datajasa as $item)
+                    @csrf
+                    <div id="product-modal-{{ $item->idJasa }}" tabindex="-1" aria-hidden="true"
+                        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 justify-center items-center w-full md:inset-0 h-[calc(100%-1rem)] max-h-full">
+                        <div class="relative px-4 w-full max-w-2xl h-full md:h-auto">
 
-                        <div class="relative bg-white rounded-2xl shadow-lg">
+                            <div class="relative bg-white rounded-2xl shadow-lg">
 
-                            <div class="flex justify-between items-start p-5 rounded-t border-b">
-                                <h3 class="text-xl font-semibold">
-                                    Edit product
-                                </h3>
-                                <button type="button"
-                                    class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-2xl text-sm p-1.5 ml-auto inline-flex items-center"
-                                    data-modal-toggle="product-modal">
-                                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path fill-rule="evenodd"
-                                            d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                                            clip-rule="evenodd"></path>
-                                    </svg>
-                                </button>
-                            </div>
+                                <div class="flex justify-between items-start p-5 rounded-t border-b">
+                                    <h3 class="text-xl font-semibold">
+                                        Edit product
+                                    </h3>
+                                    <button type="button"
+                                        class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-2xl text-sm p-1.5 ml-auto inline-flex items-center"
+                                        data-modal-toggle="product-modal-{{ $item->idJasa }}">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd"
+                                                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                                                clip-rule="evenodd"></path>
+                                        </svg>
+                                    </button>
+                                </div>
 
-                            <div class="p-6 space-y-6">
-                                <form action="{{ route('showJasa') }}" method="GET" onsubmit="showAlert()">
-                                    
-                                    <div class="grid grid-cols-6 gap-6">
-                                        <div class="col-span-6 sm:col-span-3">
-                                            <label for="product-name"
-                                                class="block mb-2 text-sm font-medium text-gray-900">Product
-                                                Name</label>
-                                            <input type="text" name="productName"
-                                                class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
-                                                placeholder="Starkom" required>
-                                        </div>
-                                        <div class="col-span-6 sm:col-span-3">
-                                            <label for="category"
-                                                class="block mb-2 text-sm font-medium text-gray-900">Category</label>
-                                            <input type="text" name="kategory"
-                                                class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
-                                                placeholder="Electronics" required>
-                                        </div>
-                                        <div class="col-span-6 sm:col-span-3">
-                                            <label for="brand"
-                                                class="block mb-2 text-sm font-medium text-gray-900">id_utama</label>
-                                            <input type="number" name="utama"
-                                                class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
-                                                placeholder="" required>
-                                        </div>
-                                        <div class="col-span-6 sm:col-span-3">
-                                            <label for="price"
-                                                class="block mb-2 text-sm font-medium text-gray-900">id_tambahan</label>
-                                            <input type="number" name="tambahan"
-                                                class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
-                                                placeholder="" required>
-                                        </div>
-                                        <div class="col-span-full">
-                                            <label for="product-details"
-                                                class="block mb-2 text-sm font-medium text-gray-900">Lokasi</label>
-                                            <input type="text" name="lokasi" value="sleman/yogyakarta"
-                                                class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
-                                                placeholder="sleman" required>
-                                        </div>
-                                        <div class="col-span-full">
-                                            <label for="product-details"
-                                                class="block mb-2 text-sm font-medium text-gray-900">image</label>
-                                            <input type="text" name="productImg" value="asset/jasa/IT.png"
-                                                class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
-                                                placeholder="asset/IT.png" required>
-                                        </div>
-                                    </div>
-                                    <div class="flex justify-center items-center mt-4 w-full">
-                                        <label
-                                            class="flex flex-col w-full h-32 rounded border-2 border-gray-300 border-dashed cursor-pointer hover:bg-gray-50">
-                                            <div class="flex flex-col justify-center items-center pt-5 pb-6">
-                                                <svg class="w-10 h-10 text-gray-400" fill="none"
-                                                    stroke="currentColor" viewBox="0 0 24 24"
-                                                    xmlns="http://www.w3.org/2000/svg">
-                                                    <path stroke-linecap="round" stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12">
-                                                    </path>
-                                                </svg>
-                                                <p class="py-1 text-sm text-gray-600">
-                                                    Upload a file or drag and drop
-                                                </p>
-                                                <p class="text-xs text-gray-500">PNG,
-                                                    JPG, GIF up to 10MB</p>
+                                <div class="p-6 space-y-6">
+                                    <form action="{{ route('update', $item->idJasa) }}" method="POST">
+                                        @csrf
+                                        @method('PUT')
+                                        <div class="grid grid-cols-6 gap-6">
+                                            <div class="col-span-6 sm:col-span-3">
+                                                <label for="product-name"
+                                                    class="block mb-2 text-sm font-medium text-gray-900">Product
+                                                    Name</label>
+                                                <input type="text" name="productName"
+                                                    value="{{ $item->product_name }}"
+                                                    class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
+                                                    placeholder="Starkom" required>
                                             </div>
-                                            <input type="file" class="hidden" />
-                                        </label>
-                                    </div>
+                                            <div class="col-span-6 sm:col-span-3">
+                                                <label for="category"
+                                                    class="block mb-2 text-sm font-medium text-gray-900">Category</label>
+                                                <input type="text" name="kategory"
+                                                    value="{{ $item->categories }}"
+                                                    class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
+                                                    placeholder="Electronics" required>
+                                            </div>
+                                            <div class="col-span-6 sm:col-span-3">
+                                                <label for="brand"
+                                                    class="block mb-2 text-sm font-medium text-gray-900">id_utama</label>
+                                                <select name="utama"
+                                                    class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
+                                                    id="">
+                                                    <option value="{{ $item->id_LU }}" selected>
+                                                        {{ $item->layananUtama->nameLU }}</option>
+                                                    @foreach ($dataLU as $itemLU)
+                                                        <option value="{{ $itemLU->id_LU }}"> {{ $itemLU->nameLU }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
 
-                                    <div class="p-6 rounded-b border-t border-gray-200">
-                                        <button
-                                            class="text-white font-medium text-sm px-5 py-2.5 text-center rounded-lg bg-gradient-to-br from-pink-500 to-voilet-500 shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform"
-                                            type="submit">confirm</button>
-                                    </div>
-                                </form>
+                                            </div>
+                                            <div class="col-span-6 sm:col-span-3">
+                                                <label for="price"
+                                                    class="block mb-2 text-sm font-medium text-gray-900">id_tambahan</label>
+                                                <select name="tambahan"
+                                                    class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
+                                                    id="">
+                                                    <option value="{{ $item->id_LT }}" selected>
+                                                        {{ $item->layananTambahan->nameLT }}</option>
+
+                                                    @foreach ($dataLT as $itemLT)
+                                                        <option value="{{ $itemLT->id_LT }}"> {{ $itemLT->nameLT }}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                            <div class="col-span-full">
+                                                <label for="product-details"
+                                                    class="block mb-2 text-sm font-medium text-gray-900">Lokasi</label>
+                                                <input type="text" name="lokasi" value="{{ $item->location }}"
+                                                    class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
+                                                    placeholder="sleman" required>
+                                            </div>
+                                            <div class="col-span-full">
+                                                <label for="product-details"
+                                                    class="block mb-2 text-sm font-medium text-gray-900">image</label>
+                                                <input type="text" name="productImg"
+                                                    value="{{ $item->img_jasa }}"
+                                                    class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
+                                                    placeholder="asset/IT.png" required>
+                                            </div>
+                                        </div>
+                                        <div class="flex justify-center items-center mt-4 w-full">
+                                            <label
+                                                class="flex flex-col w-full h-32 rounded border-2 border-gray-300 border-dashed cursor-pointer hover:bg-gray-50">
+                                                <div class="flex flex-col justify-center items-center pt-5 pb-6">
+                                                    <svg class="w-10 h-10 text-gray-400" fill="none"
+                                                        stroke="currentColor" viewBox="0 0 24 24"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path stroke-linecap="round" stroke-linejoin="round"
+                                                            stroke-width="2"
+                                                            d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12">
+                                                        </path>
+                                                    </svg>
+                                                    <p class="py-1 text-sm text-gray-600">
+                                                        Upload a file or drag and drop
+                                                    </p>
+                                                    <p class="text-xs text-gray-500">PNG,
+                                                        JPG, GIF up to 10MB</p>
+                                                </div>
+                                                <input type="file" class="hidden" />
+                                            </label>
+                                        </div>
+
+                                        <div class="p-6 rounded-b border-t border-gray-200">
+                                            <button
+                                                class="text-white font-medium text-sm px-5 py-2.5 text-center rounded-lg bg-gradient-to-br from-pink-500 to-voilet-500 shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform"
+                                                type="submit">confirm</button>
+                                        </div>
+                                    </form>
+                                </div>
+
                             </div>
-
                         </div>
                     </div>
-                </div>
+                @endforeach
+
 
 
 
@@ -737,22 +776,22 @@
         </div>
     </div>
     <script>
-        function showAlert(){
+        function showAlert() {
             alert("Update Jasa belum di Buat")
         }
     </script>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
-      @if($message = Session::get('succes'))
-      <script>
-      Swal.fire({
-        icon: "success",
-        title: "Login Success",
-        text: "{{ $message }}",
-      });
-      </script>
-      @endif
-    
+    @if ($message = Session::get('succes'))
+        <script>
+            Swal.fire({
+                icon: "success",
+                title: "Login Success",
+                text: "{{ $message }}",
+            });
+        </script>
+    @endif
+
     <script async defer src="https://buttons.github.io/buttons.js"></script>
     <script src="https://demos.creative-tim.com/soft-ui-flowbite/app.bundle.js"></script>
     <script defer src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"

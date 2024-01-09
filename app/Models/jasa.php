@@ -12,6 +12,7 @@ class jasa extends Model
     use HasFactory;
 
     protected $table = 'jasa'; 
+    protected $primaryKey = 'idJasa';
 
     protected $fillable = [
         'idJasa',
