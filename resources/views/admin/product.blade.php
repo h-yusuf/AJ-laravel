@@ -132,11 +132,13 @@
                         </div>
                     </form>
 
-                    <a href="https://www.creative-tim.com/product/soft-ui-dashboard-pro-flowbite" target="_blank"
+                    <form method="POST" action="{{ route('logout') }}">
+                        @csrf
+                    <button type="submit"
                         class="sm:inline-flex ml-5 text-white bg-gradient-to-br from-pink-500 to-voilet-500 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center mr-3 shadow-md shadow-gray-300 hover:scale-[1.02] transition-transform">
-
                         Log out
-                    </a>
+                    </button>
+                    </form>
                 </div>
             </div>
         </div>
@@ -429,7 +431,7 @@
                                                                         </div>
                                                                         <div class="col-span-6 sm:col-span-3">
                                                                             <label for="brand"
-                                                                                class="block mb-2 text-sm font-medium text-gray-900">id_utama</label>
+                                                                                class="block mb-2 text-sm font-medium text-gray-900">layanan utama</label>
                                                                             <select name="utama"
                                                                                 class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
                                                                                 id="">
@@ -443,7 +445,7 @@
                                                                         </div>
                                                                         <div class="col-span-6 sm:col-span-3">
                                                                             <label for="price"
-                                                                                class="block mb-2 text-sm font-medium text-gray-900">id_tambahan</label>
+                                                                                class="block mb-2 text-sm font-medium text-gray-900">layanan tambahan</label>
                                                                             <select name="tambahan"
                                                                                 class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
                                                                                 id="">
@@ -690,7 +692,7 @@
                                             </div>
                                             <div class="col-span-6 sm:col-span-3">
                                                 <label for="brand"
-                                                    class="block mb-2 text-sm font-medium text-gray-900">id_utama</label>
+                                                    class="block mb-2 text-sm font-medium text-gray-900">layanan utama</label>
                                                 <select name="utama"
                                                     class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
                                                     id="">
@@ -705,7 +707,7 @@
                                             </div>
                                             <div class="col-span-6 sm:col-span-3">
                                                 <label for="price"
-                                                    class="block mb-2 text-sm font-medium text-gray-900">id_tambahan</label>
+                                                    class="block mb-2 text-sm font-medium text-gray-900">layanan tambahan</label>
                                                 <select name="tambahan"
                                                     class="shadow-lg-sm border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-2 focus:ring-fuchsia-50 focus:border-fuchsia-300 block w-full p-2.5"
                                                     id="">
@@ -775,11 +777,6 @@
             </main>
         </div>
     </div>
-    <script>
-        function showAlert() {
-            alert("Update Jasa belum di Buat")
-        }
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     @if ($message = Session::get('succes'))

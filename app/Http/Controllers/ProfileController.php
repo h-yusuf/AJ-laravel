@@ -63,7 +63,7 @@ class ProfileController extends Controller
 
         if ($request->input('email') == 'admin@gmail.com') {
             
-            return redirect()->route('showJasa')->with('success', 'Login admin has successfully');
+            return redirect()->route('showJasa')->with('succes', 'Login admin has successfully');
         }
 
         return redirect()->route('home')->with('succes','Login successfuly');

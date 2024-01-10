@@ -4,9 +4,9 @@
         @forelse ($datajasa as $item)
         {{-- @dd($datajasa); --}}
             <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
-                <a href="#">
-                    <img class="rounded-t-lg w-full" src="{{ $item->img_jasa }}" alt="" />
-                </a>
+                <div style="width: 300px ; height:240px;" class=" rounded-t-lg overflow-hidden " href="#">
+                    <img  class=" h-full " src="{{ $item->img_jasa }}" alt="" />
+                </div>
                 <div class="p-4 pt-3">
                     <a href="#">
                         <h5 class="text-lgS font-medium tracking-tight text-blue-900">

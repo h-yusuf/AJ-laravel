@@ -109,14 +109,14 @@
         <h1 class="text-2xl font-poppins font-medium">Jasa Popular</h1>
         <h1 class="text-base font-poppins font-medium">Lihat Semua</h1>
       </div>
-
       <!-- card jasa popular -->
 
       @include('partials.card')
 
+
     <!-- Jasa Rekomendasi -->
 
-      <div class="w-full grid border rounded-lg mt-5 p-8">
+      <div class="w-full grid  rounded-lg mt-5 p-8">
         <div class="flex justify-between">
           <h1 class="text-2xl font-poppins font-medium">Jasa Rekomendasi</h1>
           <h1 class="text-base font-poppins font-medium">Lihat Semua</h1>
@@ -124,8 +124,8 @@
   
         <!-- card jasa popular -->
   
-       @include('partials.card')
-  
+        
+        @include('partials.card')
       </div>
     </div>
 
