@@ -2,7 +2,12 @@
 ### Note : Buat sinau gppa otak atik selagi nyimpan di git aman :)
 new version with laravel
 
-running
+#### instal dari github
+```
+git clone https://github.com/h-yusuf/AJ-laravel
+```
+
+#### running
 
 install package using npm
 
