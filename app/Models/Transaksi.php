@@ -30,13 +30,5 @@ class Transaksi extends Model
     {
         return $this->belongsTo(jasa::class,'idJasa','idJasa');
     }
-    // public function layananUtama()  : BelongsTo
-    // {
-    //     return $this->belongsTo(layanan_utama::class,'layanan_utama','id_LU');
-    // }
-    // public function layananTambahan()  : BelongsTo
-    // {
-    //     return $this->belongsTo(layanan_tambahan::class,'layanan_tambahan','id_LT');
-    // }
  
 }

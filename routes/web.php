@@ -22,12 +22,12 @@ use App\Models\jasa;
 
 Route::middleware('guest')->group(function () {
     Route::get('register', [ProfileController::class, 'create'])
-                ->name('register');
+        ->name('register');
 
     Route::post('register', [ProfileController::class, 'register']);
 
     Route::get('login', [ProfileController::class, 'create'])
-                ->name('login');
+        ->name('login');
 
     Route::post('login', [ProfileController::class, 'login']);
 
@@ -39,49 +39,46 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     $datajasa = jasa::select('*')
-    ->get();
+        ->get();
     return view('home', ['datajasa' => $datajasa]);
 })->middleware(['auth', 'verified'])->name('home');
 
 Route::get('/test', function () {
 
     $datajasa = jasa::select('*')
-    ->get();
+        ->get();
     return view('example.card', ['datajasa' => $datajasa]);
 });
 
-Route::middleware('auth')->group(function () { 
+Route::middleware('auth')->group(function () {
 
     // page route
 
     Route::get('/dashboard', function () {
         return view('/admin/dashboard');
-    });  
+    });
     Route::get('/user', function () {
         return view('/admin/users');
-    });  
-    // Route::get('/update', function () {
-
-    //     return view('admin/update');
-    // });  
+    });
     Route::get('/kategory', function () {
         $datajasa = jasa::select('*')
-        ->get();
+            ->get();
         return view('pages.kategory', ['datajasa' => $datajasa]);
-    }); 
+    });
     Route::get('/detailjasa', function () {
         return view('pages/detailjasa');
-    });   
+    });
     Route::get('/pesan', function () {
         return view('pages/pesan');
-    });   Route::get('/chat', function () {
+    });
+    Route::get('/chat', function () {
         return view('pages/chat');
     });
 
     // logout
-    
+
     Route::post('logout', [ProfileController::class, 'logout'])
-    ->name('logout');
+        ->name('logout');
 
     // admin route
 
@@ -89,9 +86,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/showCard', [showdata::class, 'showCard'])->name('showCard');
     Route::post('/deleteJasa', [adminController::class, 'deleteJasa'])->name('deleteJasa');
     Route::post('/tambahJasa', [adminController::class, 'tambahJasa'])->name('tambahJasa');
-    Route::put('/update{idJasa}',  [adminController::class, 'update'])->name('update');
+    Route::put('/update{idJasa}', [adminController::class, 'update'])->name('update');
     Route::get('/editJasa{idJasa}', [adminController::class, 'editJasa'])->name('editJasa');
-    
+
     // transaksi route
 
     Route::post('/sesionJasa', [BuatPesanan::class, 'sesionJasa'])->name('sesionJasa');
@@ -105,4 +102,4 @@ Route::middleware('auth')->group(function () {
 
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
