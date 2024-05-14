@@ -7,20 +7,21 @@ use App\Models\layanan_tambahan;
 use App\Models\layanan_utama;
 use Illuminate\Http\Request;
 
-
 class adminController extends Controller
 {
+    // Menampilkan halaman produk
     public function index()
     {
         return view('product');
     }
+
+    // Menambahkan data jasa baru
     public function tambahJasa(Request $request)
     {
+        // Mendapatkan ID Jasa terakhir dan menambahkan 1
         $idJasa = jasa::max('idJasa') + 1;
-        // dd('dsa');
-        // $numericPart = (int)substr(jasa::max('id_jasa'), 1) + 1;
-        // $idJasa = "J" . str_pad($numericPart, 3, '0', STR_PAD_LEFT);
-        // dd($idJasa);
+
+        // Menyiapkan data untuk disimpan
         $data = [
             'idJasa' => $idJasa,
             'img_jasa' => $request->input('productImg'),
@@ -29,23 +30,26 @@ class adminController extends Controller
             'id_LU' => $request->input('utama'),
             'id_LT' => $request->input('tambahan'),
             'location' => $request->input('lokasi'),
-
         ];
 
+        // Menyimpan data jasa baru
         jasa::create($data);
+
+        // dd data buat nampilin respon dari variable tertentu kyk consol.log() di js gitu lah
+        
         // dd($data);
+        
         return redirect()->route('showJasa');
     }
 
-    // edit out popup
-
+    // Menampilkan form edit untuk jasa tertentu
     public function editJasa(string $idJasa)
     {
         $jasa = jasa::findOrFail($idJasa);
-        // dd($jasa);
         return view('admin.update', compact('jasa'));
-
     }
+
+    // Memperbarui data jasa
     public function update(Request $request, string $idJasa)
     {
         $jasa = jasa::findOrFail($idJasa);
@@ -57,33 +61,32 @@ class adminController extends Controller
             'id_LT' => $request->input('tambahan'),
             'location' => $request->input('lokasi'),
         ]);
-        // dd($jasa);
 
+        // Mengarahkan kembali ke halaman TRANSAKSI
         return redirect()->route('showJasa');
     }
 
+    // Menampilkan semua data jasa beserta layanan utama dan tambahan
     public function showJasa()
     {
         $datajasa = Jasa::with('layananUtama', 'layananTambahan')->get();
         $dataLU = layanan_utama::all();
         $dataLT = layanan_tambahan::all();
-        // dd($datajasa);
 
         return view('admin.product', [
-            'datajasa' => $datajasa
-            ,
-            'dataLU' => $dataLU
-            ,
+            'datajasa' => $datajasa,
+            'dataLU' => $dataLU,
             'dataLT' => $dataLT
         ]);
     }
 
+    // Menghapus data jasa berdasarkan ID
     public function deleteJasa(Request $request)
     {
         $itemID = $request->input('item_id_rm');
-        // dd($itemID);
         jasa::where('idJasa', $itemID)->delete();
+
+        // Mengarahkan kembali ke halaman TRANSAKSI dengan pesan sukses
         return redirect()->route('showJasa')->with('success', 'Item has been deleted successfully.');
     }
-
 }

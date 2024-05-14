@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 09 Jan 2024 pada 20.59
+-- Waktu pembuatan: 05 Bulan Mei 2024 pada 18.14
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -60,9 +60,10 @@ CREATE TABLE `jasa` (
 --
 
 INSERT INTO `jasa` (`idJasa`, `img_jasa`, `product_name`, `categories`, `id_LU`, `id_LT`, `location`, `created_at`, `updated_at`) VALUES
-(1, 'asset/jasa/bersih.png', 'cleaning', 'cs', 1, 2, 'ngaw', '2024-01-07 02:23:10', '2024-01-09 12:39:54'),
-(2, 'asset/jasa/IT.png', 'starkom', 'cs', 1, 2, 'ngaw', '2024-01-07 02:24:37', '2024-01-09 12:45:07'),
-(3, 'asset/jasa/IT.png', 'starkomas', 'cs', 2, 1, 'ngaw', '2024-01-07 05:24:38', '2024-01-09 12:45:21');
+(1, 'asset/jasa/bersih.png', 'cleaning', 'cs', 1, 2, 'sleman/yogyakarta', '2024-01-07 02:23:10', '2024-01-09 14:26:06'),
+(2, 'asset/jasa/IT.png', 'starkom', 'cssssss', 1, 2, 'ngaw', '2024-01-07 02:24:37', '2024-01-09 14:21:50'),
+(3, 'asset/jasa/IT.png', 'starkomas', 'cs', 2, 1, 'sleman/yogyakarta', '2024-01-07 05:24:38', '2024-01-09 14:19:52'),
+(4, 'asset/jasa/IT.png', 'starkomzzzzz', 'electronic', 1, 1, 'sleman/yogyakarta', '2024-01-09 13:35:07', '2024-01-09 13:35:07');
 
 -- --------------------------------------------------------
 
@@ -220,7 +221,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'sach', 'iyadeh37@gmail.com', NULL, '$2y$12$Q2G6UzaIhtKMcJjm..ccNeatvIho/LTt65WtqoDP0PdPXnbU1VL9q', 'J5AnyKoGIuRWLFSTAQ51cI43d7QZ0hBN5nJccAPYfsefQwq6yx6QgzRnJi1J', '2024-01-04 20:21:13', '2024-01-04 20:21:13');
+(1, 'sach', 'iyadeh37@gmail.com', NULL, '$2y$12$Q2G6UzaIhtKMcJjm..ccNeatvIho/LTt65WtqoDP0PdPXnbU1VL9q', 'J5AnyKoGIuRWLFSTAQ51cI43d7QZ0hBN5nJccAPYfsefQwq6yx6QgzRnJi1J', '2024-01-04 20:21:13', '2024-01-04 20:21:13'),
+(2, 'admin', 'admin@gmail.com', NULL, '$2y$12$gmuCd3D8KzrNzrmNEgCyy.d6r0KYxttDvxkbk65i95AqumCZEwb5K', NULL, '2024-01-09 18:50:54', '2024-01-09 18:50:54');
 
 --
 -- Indexes for dumped tables
@@ -332,7 +334,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
